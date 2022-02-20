@@ -1,12 +1,11 @@
 <%= form_with model: @post, local: true do |f| %>
   <div class="form-group">
-    <%= f.label :今日の幸せを振り返ろう %>
     <%= f.select :today_mood, Post.today_moods.keys.to_a, {}, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :１行で幸せだった事を振り返ろう %>
     <%= f.text_field :content, class: 'form-control' %>
   </div>
 
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.button class: 'btn btn-primary' %>
+   <td><%= button_to "削除", post_path(@post), method: :delete %></td> 
 <% end %>
