@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
-  def index;end
+  
+  def index
+    @posts = Post.all
+    
+  end
 
   def new
     @post = Post.new
@@ -7,14 +11,15 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    @post[:start_time] = Date.today.strftime('%Y-%m-%d')
     if @post.save
-      redirect_to pages_show_path, success: t('defaults.message.created')
+      redirect_to posts_path, success: t('defaults.message.created')
     else
       flash.now['danger'] = t('defaults.message.not_created')
       render :new
     end
   end
-  
+
   def show;end
 
   def edit
@@ -41,6 +46,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :today_mood)
+    params.require(:post).permit(:content, :today_mood, :start_time)
   end
 end
