@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all
-    
   end
 
   def new
@@ -16,11 +15,13 @@ class PostsController < ApplicationController
       redirect_to posts_path, success: t('defaults.message.created')
     else
       flash.now['danger'] = t('defaults.message.not_created')
-      render :new
+      render :edit
     end
   end
 
-  def show;end
+  def show
+    @post = Post.find_by(id: params[:id])
+  end
 
   def edit
     @post = current_user.posts.find(params[:id])
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
-      redirect_to pages_show_path, success: t('defaults.message.updated')
+      redirect_to posts_path, success: t('defaults.message.updated')
     else
       flash.now['danger'] = t('defaults.message.not_updated')
       render :edit
@@ -39,9 +40,8 @@ class PostsController < ApplicationController
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy!
-    redirect_to pages_show_path, success: t('defaults.message.deleted', item: Post.model_name.human)
+    redirect_to posts_path, success: t('defaults.message.deleted', item: Post.model_name.human)
   end
-
 
   private
 
