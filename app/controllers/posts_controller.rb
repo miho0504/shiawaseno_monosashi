@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all
+    @posts = Post.where(user_id: current_user.id)
   end
 
   def new
@@ -12,10 +13,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     @post[:start_time] = Date.today.strftime('%Y-%m-%d')
     if @post.save
-      redirect_to posts_path, success: t('defaults.message.created')
+      redirect_to posts_path, notice: t('defaults.message.created')
     else
       flash.now['danger'] = t('defaults.message.not_created')
-      render :edit
+      render :new
     end
   end
 
@@ -30,7 +31,8 @@ class PostsController < ApplicationController
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
-      redirect_to posts_path, success: t('defaults.message.updated')
+      redirect_to posts_path,  notice: t('defaults.message.update')
+      # notice: t('defaults.message.updated')
     else
       flash.now['danger'] = t('defaults.message.not_updated')
       render :edit
@@ -40,7 +42,7 @@ class PostsController < ApplicationController
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy!
-    redirect_to posts_path, success: t('defaults.message.deleted', item: Post.model_name.human)
+    redirect_to posts_path, notice: t('defaults.message.deleted')
   end
 
   private

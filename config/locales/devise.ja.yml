@@ -66,3 +66,10 @@ ja:
       too_long: "は%{count}文字以下に設定して下さい。"
       invalid: "は有効でありません。"
       confirmation: "が内容とあっていません。"
+  defaults:
+    message:
+      update: '日記を更新しました'
+      created: '日記の投稿が完了しました'
+      not_created: '日記は1日1回までの投稿です'
+      not_updated: '日記は30文字以内で入力して下さい'
+      deleted: '日記を削除しました'
