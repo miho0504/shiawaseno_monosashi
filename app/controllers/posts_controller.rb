@@ -32,7 +32,6 @@ class PostsController < ApplicationController
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
       redirect_to posts_path,  notice: t('defaults.message.update')
-      # notice: t('defaults.message.updated')
     else
       flash.now['danger'] = t('defaults.message.not_updated')
       render :edit

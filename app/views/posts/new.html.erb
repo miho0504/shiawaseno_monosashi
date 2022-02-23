@@ -1,3 +1,4 @@
+<%= render 'error_form', locals: { post: @post } %>
 <%= form_with model: @post, local: true do |f| %>
   <div class="form-group">
     <%= f.label :今日の幸せを振り返ろう %>
