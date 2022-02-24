@@ -4,7 +4,7 @@ module DeviseHelper
     when "alert"
       "danger"
     when "notice"
-      "dark"
+      "success"
     when "error"
       "danger"
     end

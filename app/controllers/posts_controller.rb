@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: t('defaults.message.created')
     else
-      flash.now['danger'] = t('defaults.message.not_created')
+      flash.now['alert'] = t('defaults.message.not_created')
       render :new
     end
   end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to posts_path,  notice: t('defaults.message.update')
     else
-      flash.now['danger'] = t('defaults.message.not_updated')
+      flash.now['alert'] = t('defaults.message.not_updated')
       render :edit
     end
   end
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy!
-    redirect_to posts_path, notice: t('defaults.message.deleted')
+    redirect_to posts_path, alert: t('defaults.message.deleted')
   end
 
   private
