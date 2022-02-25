@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  
+    before_action :correct_user, only: [:edit, :update, :destroy, :show]
+
   def index
     @posts = Post.all
     @posts = Post.where(user_id: current_user.id)
@@ -20,16 +21,11 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-    @post = Post.find_by(id: params[:id])
-  end
+  def show;end
 
-  def edit
-    @post = current_user.posts.find(params[:id])
-  end
+  def edit;end
 
   def update
-    @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
       redirect_to posts_path,  notice: t('defaults.message.update')
     else
@@ -39,12 +35,18 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    @post = current_user.posts.find(params[:id])
     @post.destroy!
     redirect_to posts_path, alert: t('defaults.message.deleted')
   end
 
   private
+  
+def correct_user
+  @post = current_user.posts.find_by(id: params[:id])
+  unless @post
+    redirect_to posts_path
+  end
+end
 
   def post_params
     params.require(:post).permit(:content, :today_mood, :start_time)
