@@ -1,0 +1,9 @@
+<%= form_with model: @post, local: true do |f| %>
+  <div class="form-group">
+    <%= f.select :today_mood, Post.today_moods.keys.to_a, {}, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :content, class: 'form-control' %>
+  </div>
+  <%= f.submit t('helpers.submit.update'), class: 'btn btn-primary' %>
+<% end %>
