@@ -36,6 +36,7 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: 確認用パスワード
+        current_password: 現在のパスワード
         remember_me: 次回から自動的にログイン
       post:
         content: 日記
@@ -44,6 +45,10 @@ ja:
     submit:
       create: '投稿する'
       update: '更新する'
+  
+    button:
+      cancel: '退会する'
+  
   date:
     formats:
       default: "%Y/%m/%d"
