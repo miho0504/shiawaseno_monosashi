@@ -73,6 +73,7 @@ ja:
       not_created: '投稿に失敗しました'
       not_updated: '更新に失敗しました'
       deleted: '日記を削除しました'
+      login: 'ログインして下さい'
     profiles:
       update: 'プロフィールを更新しました'
     
