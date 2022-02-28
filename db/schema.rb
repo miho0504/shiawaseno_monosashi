@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(version: 2022_02_26_094025) do
   end
 
   create_table "relationships", force: :cascade do |t|
+    
+    # フォローしたユーザー
     t.integer "follower_id"
+    # フォローされたユーザー
     t.integer "following_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
