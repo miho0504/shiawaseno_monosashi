@@ -17,11 +17,13 @@ class User < ApplicationRecord
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)
   end
-
+  
+  #ユーザーをフォローする
   def follow!(other_user)
     following_relationships.create!(following_id: other_user.id)
   end
 
+   #ユーザーのフォローを解除する
   def unfollow!(other_user)
     following_relationships.find_by(following_id: other_user.id).destroy
   end

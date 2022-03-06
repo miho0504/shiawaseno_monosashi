@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   
   # 友達一覧ページ
   def index
-   @users = User.where.not(id: current_user.id)
-   @user = User.find_by(params[:id])
+    @users = User.where.not(id: current_user.id)
+    @user  = User.find_by(id: params[:name])
   end
 
   # ユーザーのプロフィール
@@ -13,12 +13,14 @@ class UsersController < ApplicationController
     end
   end
   
+  # フォローの数
   def following
-    @user  = User.find(params[:id])
-    @users = @user.followings
-    render 'show_follow'
+      @user  = User.find(params[:id])
+      @users = @user.followings
+      render 'show_follow'
   end
-
+  
+  # フォロワーの数
   def followers
     @user  = User.find(params[:id])
     @users = @user.followers

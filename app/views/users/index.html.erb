@@ -1,13 +1,9 @@
 <h3>ID検索</h3>
 
 <% @users.each do |user| %>
-<%= user.name %>　
- <%= render 'follow_form' %>
+<%= user.name %>
+<%= render partial: 'follow_form', :locals => {:user => user} %>
 <% end %>
 
 <h3>友達一覧</h3>
-
-
-
-
 
