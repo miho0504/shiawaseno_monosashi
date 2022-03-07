@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  root 'pages#index'
+  
+  resources :posts
   # プロフィール関連
   get "users/show" => "users#show"
 
@@ -7,11 +10,10 @@ Rails.application.routes.draw do
   resources :users do
     member do
      get :following, :followers
+     get :search
     end
   end
-  
+
   resources :relationships,only: [:create, :destroy]
-  
-  root 'pages#index'
-  resources :posts
+
 end

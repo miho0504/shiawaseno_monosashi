@@ -1,7 +1,7 @@
 class RelationshipsController < ApplicationController
 
   def create
-    @user = User.find_by(params[:relationship][:following_id])
+    @user = User.find_by(id: params[:relationship][:following_id])
     # ログインユーザーがフォローする
     current_user.follow!(@user)
     redirect_to users_path

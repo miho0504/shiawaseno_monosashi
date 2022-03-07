@@ -31,6 +31,7 @@ gem 'devise'
 gem 'public_uid'
 gem 'dotenv-rails'
 gem "simple_calendar", "~> 2.0"
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

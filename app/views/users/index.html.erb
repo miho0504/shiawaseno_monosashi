@@ -1,9 +1,16 @@
 <h3>ID検索</h3>
 
-<% @users.each do |user| %>
-<%= user.name %>
-<%= render partial: 'follow_form', :locals => {:user => user} %>
+<%= render 'search_form', url: users_path %>
+<% if @search.empty? %>
+  <p>検索結果がありませんでした</p>
+<% else %>
+  <% @search.each do |user| %>
+    <%= user.name %>
+    <%= render partial: 'follow_form', :locals => {:user => user} %>
+  <% end %>
 <% end %>
 
 <h3>友達一覧</h3>
+
+<%= render partial: 'show_follow' %>
 
