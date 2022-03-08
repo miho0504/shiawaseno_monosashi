@@ -3,6 +3,7 @@
 <%= render 'search_form', url: users_path %>
 <% if @search.empty? %>
   <p>検索結果がありませんでした</p>
+<% elsif @search.count == User.all.count %>
 <% else %>
   <% @search.each do |user| %>
     <%= user.name %>
