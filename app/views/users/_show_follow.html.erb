@@ -1,5 +1,0 @@
-<% @user ||= current_user %>
-<% @user.followings.each do |user| %>
-<%= user.name %>
-  <%= render partial: 'follow_form', :locals => {:user => user} %>
-<% end %>

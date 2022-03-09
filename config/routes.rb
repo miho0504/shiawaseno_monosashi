@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   # フォロー関連
   resources :users do
     member do
+  
+     resources :followers
      get :following, :followers
      get :search
+     
     end
   end
 

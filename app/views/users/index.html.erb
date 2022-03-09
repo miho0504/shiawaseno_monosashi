@@ -13,5 +13,13 @@
 
 <h3>友達一覧</h3>
 
-<%= render partial: 'show_follow' %>
-
+<% @user ||= current_user %>
+<% if @user.followings.count == 0 %>
+ <p>友達が追加されてません ID検索で友達を探してみましょう</p>
+<% else %>
+  <% @user.followings.each do |user| %>
+    <%= user.name %>
+    <%= render partial: 'follow_form', :locals => {:user => user} %>
+    <%= link_to "日記を見る", followers_path(user) %>
+  <% end %>
+<% end %>
