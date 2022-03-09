@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :search
+   before_action :search
+   before_action :correct_user
   
   # 友達一覧ページ
   def index
@@ -24,12 +25,21 @@ class UsersController < ApplicationController
   
   # フォロワーの数
   def followers
-    @result  = User.find(params[:id])
+    @user  = User.find(params[:id])
     @users = @user.followers
     render 'show_follower'
   end
   
   def search
     @q = User.ransack(params[:q])
+  end
+  
+  private
+  
+  def correct_user
+    @users = current_user.followings
+    unless @users
+    redirect_to posts_path
+    end
   end
 end
