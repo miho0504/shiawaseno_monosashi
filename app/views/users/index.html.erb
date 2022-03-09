@@ -4,12 +4,14 @@
 <% if @search.empty? %>
   <p>検索結果がありませんでした</p>
 <% elsif @search.count == User.all.count %>
+  <p>ID検索をして友達を探してみましょう</p>
 <% else %>
   <% @search.each do |user| %>
     <%= user.name %>
     <%= render partial: 'follow_form', :locals => {:user => user} %>
+    <% end %>
   <% end %>
-<% end %>
+
 
 <h3>友達一覧</h3>
 

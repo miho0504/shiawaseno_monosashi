@@ -1,4 +1,6 @@
-
+<% @user.each do |user| %>
+<h2><%= user.name %>さんの日記</h2>
+<% end %>
 <%= month_calendar events: @post do |date, posts| %>
   <%= date.day %>
 
