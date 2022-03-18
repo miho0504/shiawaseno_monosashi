@@ -1,9 +1,9 @@
 <% @user.each do |user| %>
 <h2><%= user.name %>さんの日記</h2>
+<%= render partial: 'users/follow_form', :locals => {:user => user} %>
 <% end %>
 <%= month_calendar events: @post do |date, posts| %>
   <%= date.day %>
-
   <% posts.each do |p| %>
     <div>
       <%= link_to p.today_mood, p %>
