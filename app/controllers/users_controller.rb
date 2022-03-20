@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @search = @q.result(distinct: true)
     @users = User.where.not(id: current_user.id)
     @user  = User.find_by(id: params[:name])
+    @posts = Post.all.includes(:user).where(user_id: @users)
   end
 
   # ユーザーのプロフィール
@@ -37,9 +38,9 @@ class UsersController < ApplicationController
   private
   
   def correct_user
-    @users = current_user.followings
+      @users = current_user.followings
     unless @users
-    redirect_to posts_path
+      redirect_to posts_path
     end
   end
 end
