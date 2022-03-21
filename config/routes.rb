@@ -8,12 +8,13 @@ Rails.application.routes.draw do
 
   # フォロー関連
   resources :users do
+    collection do
+      resources :followings,only: [:create, :destroy]
+    end
     member do
-  
      resources :followers
      get :following, :followers
      get :search
-     
     end
   end
 
