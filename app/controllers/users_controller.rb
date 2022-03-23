@@ -2,7 +2,7 @@ class UsersController < ApplicationController
    before_action :search
    before_action :correct_user
   
-  # 友達一覧ページ
+  # 今日の友達の日記
   def index
     @search = @q.result(distinct: true)
     @users = User.where.not(id: current_user.id)
@@ -17,19 +17,12 @@ class UsersController < ApplicationController
     end
   end
   
-  # フォローの数
-  def following
-    @user  = User.find(params[:id])
-    @users = @user.followings
-    render 'show_follow'
+  # 友達一覧ページ
+  def friend_list
+    @user = User.where.not(id: current_user.id)
+    @users  = User.find_by(id: params[:name])
   end
   
-  # フォロワーの数
-  def followers
-    @user  = User.find(params[:id])
-    @users = @user.followers
-    render 'show_follower'
-  end
   
   def search
     @q = User.ransack(params[:q])

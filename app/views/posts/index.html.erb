@@ -1,4 +1,9 @@
 <%= link_to '仮日記作成ボタン', new_post_path %>
+<%= link_to 'プロフィール', users_show_path %>
+<%= link_to '友達一覧', friend_list_users_path %>
+<%= link_to '友達の日記一覧',  users_path%>
+
+
 <%= month_calendar events: @posts do |date, posts| %>
   <%= date.day %>
   <% posts.each do |p| %>

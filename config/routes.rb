@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # フォロー関連
   resources :users do
     collection do
-      resources :followings,only: [:create, :destroy]
+      get :friend_list
     end
     member do
      resources :followers
