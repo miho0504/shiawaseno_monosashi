@@ -1,0 +1,38 @@
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-md">
+        <a>
+          <%= link_to 'Top', root_path, data: {"turbolinks" => false} %>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to '自分の日記', posts_path %>
+              </li>
+            　<li class="nav-item">
+                <%= link_to '友達の日記一覧', users_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '友達一覧', friend_list_users_path %>
+              </li>
+             <li class="nav-item">
+                <%= link_to 'プロフィール', users_show_path %>
+              </li>
+              <li class="nav-item">
+                <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "新規登録", new_user_registration_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ログイン", new_user_session_path %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
