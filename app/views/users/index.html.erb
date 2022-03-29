@@ -1,12 +1,10 @@
 <h3>今日の友達の日記</h3>
 <% if @posts.where("start_time > ?", Date.today).present? %>
-  <% @users.each do |user| %>
-    <% @posts.each do |post| %>
-      <%= user.name %>
+    <% @posts.where("start_time > ?", Date.today).each do |post| %>
+      <%= User.find_by(id: post.user_id).name %>
       <%= post.content %>
       <%= post.today_mood %>
     <% end %>
-  <% end %>
-<% else %>
+  <% else %>
 <p>今日の友達の日記をありません</p>
 <% end %>

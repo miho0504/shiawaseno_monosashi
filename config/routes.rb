@@ -3,9 +3,6 @@ Rails.application.routes.draw do
   root 'pages#index'
   
   resources :posts
-  # プロフィール関連
-  get "users/show" => "users#show"
-
   # フォロー関連
   resources :users do
     collection do
@@ -17,7 +14,8 @@ Rails.application.routes.draw do
      get :search
     end
   end
-
+    # プロフィール関連
+  get "users/show" => "users#show"
   resources :relationships,only: [:create, :destroy]
 
 end
