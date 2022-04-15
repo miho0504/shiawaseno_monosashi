@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ShiawasenoMonosashi</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>DeviseRails6</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <style>@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@500;800&family=Mochiy+Pop+P+One&family=Potta+One&family=Zen+Kaku+Gothic+New:wght@500&display=swap');</style>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
-  </head>
-
-  <body>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <head>
+   <body>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/flashes' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

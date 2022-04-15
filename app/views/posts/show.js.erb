@@ -1,0 +1,14 @@
+var modal = document.getElementById('modal');
+
+var mask = document.getElementById('mask');
+
+modal.innerHTML = '<%= escape_javascript(render 'show', post: @post ) %>';
+
+modal.classList.remove('hidden');
+mask.classList.remove('hidden');
+
+mask.addEventListener('click', () => {
+  modal.classList.add('hidden');
+  mask.classList.add('hidden');
+  });
+  

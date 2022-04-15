@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="follow-relation col-12 col-md-10 text-center">
+      <div class="box">
+        <h3>プロフィール</h3>
+        <p>なまえ:<%= current_user.name %> </p>
+        <p>メールアドレス: <%= current_user.email %></p>
+        <br>
+        <h3>日記投稿レベル</h3>
+          <% if @count_posts <= 0 %>
+            Lv1
+          <% elsif @count_posts <= 5 %>
+            Lv2
+          <% end %>
+        <br>
+        <p><%= button_to '編集', edit_user_registration_path, method: :get, class: "editbtn" %></p>
+        <br>
+    </div>

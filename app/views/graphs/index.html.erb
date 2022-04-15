@@ -1,0 +1,85 @@
+<div class="chart-glaf">
+    <div class="follow-relation col-12 col-md-10 text-center">
+      <h2>月で比較してみよう</h2>
+      <canvas id="myChart" width="400" height="120"> </canvas>
+      <script> 
+         var ctx = document.getElementById("myChart").getContext('2d');
+         var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: <%= @chartlabels %>,
+            datasets: [{},
+            {
+                label: "気分の波",
+                data: <%= @chartdatas %>,
+                backgroundColor: '#FFDBC9',
+                borderColor: "#FF570D",
+                pointBackgroundColor: "#FF570D", 
+                type: 'line',
+                fill: true,
+                tension: 0.5,
+            }],
+        },
+    });
+</script>
+ </div>
+  </div>
+<br>
+<br>
+<h2>自分にとってのしあわせを見つけよう</h2>
+<p>しあわせだった事そうじゃなかった事を比較して自分の本当のしあわせを見つけよう</p>
+<br>
+<!--ここから評価比較-->
+<div class="tab-panel">
+  <ul class="tab-group">
+    <li class="tab tab-A is-active">○</li>
+    <li class="tab tab-B">△</li>
+    <li class="tab tab-C">×</li>  
+ </ul>
+  
+  <div class="panel-group">
+    <div class="panel tab-A is-show">
+      <% @maru.each do |maru| %>
+        <%= maru.created_at.strftime('%m/%d') %>
+        <%= maru.content %>
+        <br>
+      <% end %>
+    </div>
+    <div class="panel tab-B">
+      <% @sankaku.each do |sankaku| %>
+        <%= sankaku.created_at.strftime('%m/%d') %>
+        <%= sankaku.content %>
+        <br>
+      <% end %>
+    </div>
+    <div class="panel tab-C">
+      <% @batu.each do |batu| %>
+        <%= batu.created_at.strftime('%m/%d') %>
+        <%= batu.content %>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // タブに対してクリックイベントを適用
+  const tabs = document.getElementsByClassName('tab');
+  for(let i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', tabSwitch, false);
+  }
+
+  // タブをクリックすると実行する関数
+  function tabSwitch(){
+    // タブのclassの値を変更
+    document.getElementsByClassName('is-active')[0].classList.remove('is-active');
+    this.classList.add('is-active');
+    // コンテンツのclassの値を変更
+    document.getElementsByClassName('is-show')[0].classList.remove('is-show');
+    const arrayTabs = Array.prototype.slice.call(tabs);
+    const index = arrayTabs.indexOf(this);
+    document.getElementsByClassName('panel')[index].classList.add('is-show');
+  };
+}, false);
+</script>

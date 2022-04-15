@@ -1,0 +1,37 @@
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md">
+        <div class="header_logo">
+          <%= link_to image_tag("cat.png"), root_path %>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'MYDIARY', posts_path, class: "nav-link"  %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'GRAPH', graphs_path, class: "nav-link"  %>
+              </li>
+             <li class="nav-item">
+                <%= link_to 'PROFILE', users_show_path, class: "nav-link"  %>
+              </li>
+              <div class="logout">
+                <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "nav-link", data: { confirm: 'ログアウトしますか？' } %>
+              </div>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "SIGNUP", new_user_registration_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "LOGIN", new_user_session_path, class: "nav-link"  %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+    

@@ -1,0 +1,126 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ 
+.body {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  background-color: #B0C4DE;
+  width: 100px;
+}
+
+// 日記作成ボタン
+.topBtn {
+  position: relative;
+  display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    outline: 0;
+    overflow: hidden;
+    color: #fff;
+    background: #FF9900;
+    border-radius: 8px;
+    box-shadow: 0 0 0 5px #FF9900, 0 2px 3px 5px rgba(0,0,0,0.5);
+    border: 2px dashed #fff;
+    padding: .5em 1em;
+    float: right;
+    width: 200px;
+    font-size: 20px;
+    animation-name:updown1;
+    animation-delay:0s;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    right: 100px;
+}
+
+.link {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+.main {
+font-family: 'Yusei Magic', sans-serif;
+}
+
+// @keyframes updown1 {
+//   0% {
+//     transform: translateY(0);
+//   }
+//   50% {
+//     transform: translateY(-20px);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
+
+// 今日のひとこと
+.word {
+  padding-top: 50px;
+  padding-left: 280px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+.words p {
+  margin: 0; 
+  padding-top: 0px;
+}
+
+.balloon5 {
+  width: 100%;
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+
+.balloon5 .faceicon {
+  float: left;
+  margin-right: -90px;
+  width: 80px;
+}
+
+.balloon5 .faceicon img{
+  width: 100%;
+  height: auto;
+  border: solid 3px #d7ebfe;
+  border-radius: 50%;
+}
+
+.balloon5 .chatting {
+  width: 100%;
+}
+
+.says {
+  display: inline-block;
+  position: relative; 
+  margin: 5px 0 0 105px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #FFE4B5;
+}
+
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px; 
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #FFE4B5;
+}
+
+.says p {
+  margin: 0;
+  padding: 0;
+}
+
+// 投稿詳細ボタン配置
+.show_button {
+  display:flex;
+  padding-left: 280px;
+}
+
+.container-newbtn {
+   font-family: 'M PLUS Rounded 1c', sans-serif;
+   padding-top: 130px;
+}

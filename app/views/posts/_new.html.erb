@@ -1,0 +1,20 @@
+  <%= render 'error_form', locals: { post: @post } %>
+  <div class="container-new">
+    <div class="follow-relation col-12 col-md-10 text-center">
+      <div class="box">
+        <%= form_with model: @post, local: true do |f| %>
+      <div class="form-group">
+        <%= f.label :今日のしあわせを振り返ろう %>
+        <%= f.select :today_mood, Post.today_moods.keys.to_a, {}, class: 'form-control' %>
+      </div>
+      <br>
+      <div class="form-group">
+        <%= f.label :１行でしあわせだった事を振り返ろう %>
+        <%= f.text_field :content, class: 'form-control' %>
+      </div>
+      <br>
+        <%= f.submit t('helpers.submit.create'), class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>

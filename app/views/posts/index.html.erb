@@ -1,0 +1,31 @@
+<div class="border-radius"></div>
+<%= month_calendar events: @posts do |date, posts| %>
+  <%= date.day %>
+  <% posts.each do |p| %>
+    <div>
+      <%= link_to p.today_mood, p, remote: true %>
+    </div>
+  <% end %>
+<% end %>
+
+<div id="mask" class="hidden"></div>
+  <div id="modal" class="hidden">
+  </div>
+
+<button_to  id="topBtn" class="topBtn">
+  <%= link_to("Create a diary", new_post_path, remote: true, class: "link") %>
+</button>
+
+<script>
+jQuery(function() {
+  let topBtn = $("#topBtn");
+  $(window).on('load', function() {
+    topBtn.stop().animate({ bottom: "70px" }, 1600);
+  });
+});
+</script>
+
+
+
+
+

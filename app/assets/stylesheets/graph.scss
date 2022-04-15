@@ -1,0 +1,73 @@
+// Place all the styles related to the graph controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+h2 {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    color: #555555;
+    text-align:center;
+}
+
+p {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    color: #555555;
+    text-align:center;
+}
+
+/*---------------
+    #チャートグラフ
+---------------*/
+
+.chart-glaf {
+  padding-top: 100px;
+  padding-left: 200px;
+}
+
+/*---------------
+    #評価比較タブ
+---------------*/
+
+.tab-group{
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+  margin:auto
+}
+.tab{
+  flex-grow: 1;
+  padding:5px;
+  list-style:none;
+  border:solid 1px #CCC;
+  text-align:center;
+  cursor:pointer;
+}
+.panel-group{
+  height:300px;
+  border-top:none;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: #555555;
+  font-size: 20px;
+  width: 980px;
+  margin:auto;
+  padding-left: 40px;
+  overflow: scroll;
+}
+.panel{
+  display:none;
+}
+.tab.is-active{
+  background: #fd7e14;
+  color:#FFF;
+  transition: all 0.2s ease-out;
+}
+.panel.is-show{
+  display:block;
+}
+
+.overflow-div {
+  width: 300px;
+  height: 300px;
+  border: solid 1px;
+  overflow: scroll;
+}

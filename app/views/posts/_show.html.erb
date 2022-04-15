@@ -1,0 +1,18 @@
+<div class="modal-container">
+    <div class="follow-relation col-12 col-md-10 text-center">
+      <div class="box">
+        <br>
+        <h3>今日のしあわせ評価:<%= post.today_mood %></h3>
+        <h3>一行で:<%= post.content %></h3>
+      <div class="show_button">
+        <%= button_to '編集', edit_post_path, method: :get, remote: true, class: "edit-showbtn" %>
+        <%= button_to'削除', post_path(post), method: :delete, class: "quitbtn" %>
+      </div>
+        <br>
+        <p>この日の日記をTwitterでシェアする</p>
+        <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}/&text=今日の自分のしあわせ評価【#{@post.today_mood}】一行日記【#{@post.content}】", title: 'Twitter', target: '_blank' %>
+        <br>
+      </div>
+    </div>
+   </div>
+</div>

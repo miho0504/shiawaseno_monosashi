@@ -1,0 +1,50 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// トップペ
+
+.main {
+    width: 900px;
+}
+
+// トップページ文字
+
+.main-logo {
+  font-size: 80px;
+  color: #696969;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.main-logo h1 {
+  font-size: 80px;
+  color: #444444;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.main-logo h2 {
+  font-size: 30px;
+  color: #444444;
+}
+
+// トップページ説明文
+
+.main-Heading {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  background: #FFEBCD;
+  box-shadow: 0px 0px 0px 5px #FFEBCD;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+  font-size: 20px;
+&:after {
+  position: absolute;
+  content: '';
+  left: -19px;
+  top: -10px;
+  border-width: 0 0 15px 15px;
+  border-style: solid;
+  border-color: #fff #fff #FFCC99;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);}
+}
+
