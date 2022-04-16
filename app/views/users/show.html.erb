@@ -11,6 +11,12 @@
             Lv1
           <% elsif @count_posts <= 5 %>
             Lv2
+          <% elsif @count_posts <= 10 %>
+            Lv3
+          <% elsif @count_posts <= 15 %>
+            Lv4
+          <% elsif @count_posts <= 20 %>
+            Lv5
           <% end %>
         <br>
         <p><%= button_to '編集', edit_user_registration_path, method: :get, class: "editbtn" %></p>
