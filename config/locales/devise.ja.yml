@@ -59,7 +59,7 @@ ja:
       not_locked: 'は凍結されていません。'
       not_saved:
         one: "ユーザーの保存に失敗しました"
-        other: "入力されていない項目があります"
+        other: ""
       taken: "は既に使用されています。"
       blank: "が入力されていません。"
       too_short: "は%{count}文字以上に設定して下さい。"

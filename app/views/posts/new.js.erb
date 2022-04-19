@@ -1,12 +1,16 @@
+<!--定義-->
 var modal = document.getElementById('modal');
 
 var mask = document.getElementById('mask');
 
+<!--モーダルに表示する要素-->
 modal.innerHTML = '<%= escape_javascript(render 'new', post: @post ) %>';
 
+<!--クラス削除-->
 modal.classList.remove('hidden');
 mask.classList.remove('hidden');
 
+<!--黒い画面クリックイベントで戻る処理-->
 mask.addEventListener('click', () => {
   modal.classList.add('hidden');
   mask.classList.add('hidden');

@@ -1,6 +1,8 @@
 <div class="chart-glaf">
     <div class="follow-relation col-12 col-md-10 text-center">
-      <h2>月で比較してみよう</h2>
+      <h2>月で比較してみよう<br><%= @month.month %>月</h2>
+      <%= link_to '< prev', graphs_path({date: @month.prev_month.strftime("%Y-%m")}) %>
+      <%= link_to 'next >', graphs_path({date: @month.next_month.strftime("%Y-%m")}) %>
       <canvas id="myChart" width="400" height="120"> </canvas>
       <script> 
          var ctx = document.getElementById("myChart").getContext('2d');
@@ -19,6 +21,15 @@
                 fill: true,
                 tension: 0.5,
             }],
+            options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+      }
         },
     });
 </script>
@@ -28,6 +39,7 @@
 <br>
 <h2>自分にとってのしあわせを見つけよう</h2>
 <p>しあわせだった事そうじゃなかった事を比較して自分の本当のしあわせを見つけよう</p>
+<p>自分にとってしあわせになる為に必要だと思っていた事がそうでなかったりするよ</p>
 <br>
 <!--ここから評価比較-->
 <div class="tab-panel">
@@ -40,22 +52,31 @@
   <div class="panel-group">
     <div class="panel tab-A is-show">
       <% @maru.each do |maru| %>
-        <%= maru.created_at.strftime('%m/%d') %>
-        <%= maru.content %>
+        <% if maru.content.present? %>
+          <%= maru.created_at.strftime('%m/%d') %>
+          <%= maru.content %>
+        <% else %>
+        <% end %>
         <br>
       <% end %>
     </div>
     <div class="panel tab-B">
       <% @sankaku.each do |sankaku| %>
-        <%= sankaku.created_at.strftime('%m/%d') %>
-        <%= sankaku.content %>
+        <% if sankaku.content.present? %>
+          <%= sankaku.created_at.strftime('%m/%d') %>
+          <%= sankaku.content %>
+        <% else %>
+        <% end %>
         <br>
       <% end %>
     </div>
     <div class="panel tab-C">
       <% @batu.each do |batu| %>
-        <%= batu.created_at.strftime('%m/%d') %>
-        <%= batu.content %>
+        <% if batu.content.present? %>
+          <%= batu.created_at.strftime('%m/%d') %>
+          <%= batu.content %>
+        <% else %>
+        <% end %>
         <br>
       <% end %>
     </div>
