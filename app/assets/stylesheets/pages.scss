@@ -2,22 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// トップペ
-
+// トップページ
 .main {
     width: 900px;
 }
 
-// トップページ文字
+p {
+  font-size: 18px;
+}
 
+.main-font {
+  padding-top: 80px;
+}
+
+.font-group {
+  padding: 70px;
+}
+
+// トップページ文字
 .main-logo {
   font-size: 80px;
-  color: #696969;
+  color: white;
   font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
 .main-logo h1 {
-  font-size: 80px;
+  font-size: 60px;
   color: #444444;
   font-family: 'Zen Kaku Gothic New', sans-serif;
 }
@@ -25,6 +35,16 @@
 .main-logo h2 {
   font-size: 30px;
   color: #444444;
+}
+
+// 説明文画像
+
+.page-calendar {
+  float: right;
+}
+
+.page-graph {
+  float: left;
 }
 
 // トップページ説明文
@@ -48,3 +68,12 @@
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);}
 }
 
+.box2 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 2px #888888;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}

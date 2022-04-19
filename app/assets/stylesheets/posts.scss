@@ -56,6 +56,20 @@ font-family: 'Yusei Magic', sans-serif;
   }
 }
 
+/* タブレット*/
+@media (max-width: 1024px) {
+  .topBtn  {
+    left: 550px;
+  }
+}
+
+/* スマホ */
+@media (max-width: 599px) {
+  .topBtn r {
+    left: 550px;
+  }
+}
+
 // 今日のひとこと
 .word {
   padding-top: 50px;
@@ -117,7 +131,7 @@ font-family: 'Yusei Magic', sans-serif;
 // 投稿詳細ボタン配置
 .show_button {
   display:flex;
-  padding-left: 280px;
+  padding-left: 250px;
 }
 
 .container-newbtn {
@@ -125,3 +139,61 @@ font-family: 'Yusei Magic', sans-serif;
    padding-top: 130px;
 }
 
+// 1日1回のポップアップ
+.bg_onetime_popup {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.bg_onetime_popup.js_active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.onetime_popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50%;
+    min-width: 500px;
+    cursor: pointer;
+    background: #EEEEEE;
+    box-shadow: 0px 0px 0px 10px #EEEEEE;
+    border: dashed 2px #444444;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.onetime_popup_title::before,
+.onetime_popup_title::after {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    font-size: 20px;
+}
+.onetime_popup_title::before {
+    transform: rotate(45deg);
+}
+.onetime_popup_title::after {
+    transform: rotate(-45deg);
+}
+
+.onetime_popup_content {
+    padding: 60px 30px;
+    text-align: center;
+    font-size: 25px;
+}

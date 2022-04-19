@@ -17,20 +17,7 @@
  
 .container {
    font-family: 'M PLUS Rounded 1c', sans-serif;
-   padding-top: 130px;
  }
- 
- .container-new {
-   font-family: 'M PLUS Rounded 1c', sans-serif;
-   padding-top: 130px;
-   padding-left: 165px;
- }
-
-.image_switch {
-  width:55px;
-  height: 55px;
-  margin-right: 20px;
-}
 
 /*---------------
     #Header
@@ -39,7 +26,6 @@
 .site-header {
   background-color: #B0C4DE; 
   font-family: 'M PLUS Rounded 1c', sans-serif;
-
   z-index: 999;
   top: 0;
   left: 0;
@@ -50,7 +36,6 @@
   padding-left: 100px;
   position: fixed;
 }
-
 
 .header_logo {
   padding-left: 100px;
@@ -83,23 +68,49 @@
   transition: all 0.5s ease;}
 }
 
+@media screen and  (max-width: 1024px) {
+.navbar-nav{
+    padding-top: 300px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  // スマホ用
+ .navbar-nav{
+     
+
+  }
+}
 
 /*---------------
     #Fotter
 ---------------*/
-* {
-  margin:0; padding:0;
+
+.content {
+  min-height: 100px;
 }
-footer {
-  width: 100%;
-  height: 30px; 
-  text-align: center;
-  padding: 30px 0;
-  background-color: #B0C4DE;
+
+.footer {
+  background-color: #B0C4DE; 
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: white;
+  height: 60px;
 }
-.footer-text {
-  color: #fff;
+
+/* タブレット*/
+@media (max-width: 1024px) {
+  .footer  {
+
+  }
 }
+
+/* スマホ */
+@media (max-width: 599px) {
+  .footer r {
+
+  }
+}
+
 
 /*---------------
     #入力画面ボックス
@@ -114,12 +125,12 @@ footer {
     border: dashed 2px #444444;
     border-radius: 8px;
     margin: auto;
+    margin-top: 100px;
 }
 .box p {
     margin: 0; 
     padding: 0;
 }
-
 
 /*---------------
     #ボタン関連
@@ -205,7 +216,6 @@ footer {
   transform: translateY(0);}
 }
 
-
 // 投稿詳細編集ボタン
 .edit-showbtn {
   align-items: center;
@@ -223,7 +233,7 @@ footer {
   font-weight: 600;
   justify-content: center;
   line-height: 1.25;
-  margin: 0;
+  margin: 5px;
   min-height: 3rem;
   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
@@ -303,7 +313,7 @@ footer {
   font-weight: 600;
   justify-content: center;
   line-height: 1.25;
-  margin: 0;
+  margin: 5px;
   min-height: 3rem;
   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
@@ -366,7 +376,7 @@ footer {
   transform: translateY(0);}
 }
 
-// 新規登録
+// 新規登録ボタン
 .newbtn {
   align-items: center;
   background-clip: padding-box;
@@ -406,11 +416,3 @@ footer {
   transform: translateY(0);}
 }
 
-
-// モーダル画面
-.modal-window {
-  padding: 0.5em 1em;
-  margin: 2em 0;
-  color: #222222;
-  background: #F0FFFF;
-}
