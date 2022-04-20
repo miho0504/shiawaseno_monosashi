@@ -2,52 +2,100 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// トップページ
 .main {
-    width: 900px;
+  width: 1000px;
 }
 
-p {
-  font-size: 18px;
+.main-content {
+  padding-top: 50px;
+  margin: 30px 0px 30px 0px;
 }
 
+// メイン文字
 .main-font {
-  padding-top: 80px;
-}
-
-.font-group {
-  padding: 70px;
-}
-
-// トップページ文字
-.main-logo {
-  font-size: 80px;
-  color: white;
+  color: #444444;
   font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
-.main-logo h1 {
+.main-font h1 {
   font-size: 60px;
-  color: #444444;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
-.main-logo h2 {
+.main-font h2 {
   font-size: 30px;
-  color: #444444;
+  padding: 10px;
 }
 
-// 説明文画像
+.main-font h3 {
+  font-size: 20px;
+  padding: 10px;
+}
 
-.page-calendar {
+// メイン画像
+.page-logo {
   float: right;
+  pading: 30px;
 }
 
-.page-graph {
-  float: left;
+// ログインボタン
+.top-loginbtn {
+  display: flex;
+}
+
+.login-btn {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #FF9900;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 180px;
+  margin: 20px 20px 0px 20px;
+}
+
+// 紹介
+
+.main-content-Introduction {
+  padding: 20px;
+  margin: 50px;
+  font-size: 30px;
+  width: 35%;
+  text-decoration: underline wavy #ff838b;
 }
 
 // トップページ説明文
+.main-content-text {
+  display: flex;
+  width: 80%;
+  margin-bottom: 80px;
+}
+
+.main-content-image {
+  padding: 40px 0px 40px 0px;
+}
+
+.main-font {
+  padding-top: 50px;
+}
 
 .main-Heading {
   font-family: 'Zen Kaku Gothic New', sans-serif;
@@ -56,7 +104,7 @@ p {
   border: dashed 2px white;
   padding: 0.2em 0.5em;
   color: #454545;
-  font-size: 20px;
+  font-size: 25px;
 &:after {
   position: absolute;
   content: '';
@@ -72,8 +120,10 @@ p {
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
-    color: #6091d3;/*文字色*/
+    color: #6091d3;
     background: #FFF;
-    border: solid 2px #888888;/*線*/
-    border-radius: 10px;/*角の丸み*/
+    border: solid 2px #888888;
+    border-radius: 10px;
+    width: 350px;
+    margin: 10px;
 }

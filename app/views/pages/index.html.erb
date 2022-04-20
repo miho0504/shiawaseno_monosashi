@@ -1,66 +1,73 @@
 <center>
   <div class="main">
-    <div class="main-logo">
-      <br>
-      <div class="star">
+    <div class="main-content">
+      <div class="font-group">
+       <%= image_tag 'toplogo.png', class: 'page-logo', width: '40%', height: '40%' %>
+       </div>
+      <div class="main-font">
+        <h1>しあわせのものさし</h1>
+        <h2>自分にとっての「しあわせ」を見つけよう</h2>
+        <h3>しあわせのものさしは、日記にしあわせ評価しその理由を書いてもらい、自分のしあわせを可視化するサービスです。</h3>
       </div>
-      <h1>しあわせのものさし</h1>
-      <h2>自分にとっての「しあわせ」を見つけよう</h2>
-    </div>
-    <div class="box2">
-    <div class="main-Heading">
-      <h3>しあわせのものさしって？</h3>
-    </div>
-    <div class="font-group">
-      <p>何をしてもしあわせを感じない。人と比較し落ち込む・嫉妬してしまう。</p>
-      <p>お金持ち・可愛くなればしあわせになれると思ってたのに満たされない。</p>
-      <p>そんな人に贈る自分にとってのしあわせが何かを見つけるためのサービスです。</p>
-    </div>
+      </div>
+    
+      <div class="top-loginbtn">
+        <div class="buttons">
+          <%= link_to 'ログイン', new_user_session_path, class: "login-btn" %></p>
+        </div>
+        <div class="buttons">
+          <%= link_to '新規登録', new_user_registration_path, class: "login-btn" %></p>
+        </div>
+        <div class="buttons">
+          <%= link_to '覗いてみる', new_user_registration_path, class: "login-btn" %></p>
+        </div>
+      </div>
     </div>
     
-    <div class="box2">
-    <div class="main-Heading">
-      <h3>今日の自分のしあわせ評価し理由を一行で書き込もう</h3>
+    <div class="main-content-Introduction">
+      <p>しあわせのものさしの特徴</p>
     </div>
-    <div class="font-group">
-    <%= image_tag 'calendar.jpg', class: 'page-calendar', width: '70%', height: '70%' %>
-    <div class="main-font">
-      <p>入力はカンタン。</p>
-      <p>今日の自分のしあわせを</p>
-      <p>◯ △ ×で評価。</p>
-      <p>その理由を一行で書き込むだけ</p>
-    </div>
-    </div>
-     </div>
+  
+      <div class="main-content-text">
+        <div class="box2">
+          <div class="main-Heading">
+            <p>しあわせを一行と評価</p>
+          </div>
+            <div class="main-content-image">
+              <%= image_tag 'diary.png', class: 'page-graphr', width: '70%', height: '70%' %>
+            <div class="main-font">
+                <p>入力はカンタン。今日の自分のしあわせ振り返ってみてを◯ △ ×で評価。その理由を一行で書き込むだけ</p>
+            </div>
+          </div>
+        </div>
     
-    <div class="box2">
-    <div class="main-Heading">
-      <h3>自分のしあわせをグラフで比較してみよう</h3>
-    </div>
-    <div class="main-font">
-       <%= image_tag 'calendar.jpg', class: 'page-graph', width: '70%', height: '70%' %>
-    <div class="main-font">
-     <p>月ごとに評価の推移</p>
-     <p>️自分のしあわせ一行をして</p>
-    </div>
-    </div>
-    </div>
-     <br>
-      <br>
-       <br>
-        <br>
-         <br>
+        <div class="box2">
+          <div class="main-Heading">
+            <p>グラフで比較する</p>
+          </div>
+          <div class="main-content-image">
+            <%= image_tag 'graph.png', class: 'page-graph', width: '100%', height: '100%' %>
+          <div class="main-font">
+            <p>◯ △ ×の数がどの時期に多かったのかパッとみて分かるグラフ付。自分の気分の波を把握することができるよ。</p>
+          </div>
+        </div>
+      </div>
+        
+        <div class="box2">
+          <div class="main-Heading">
+            <p>しあわせを比較する</p>
+          </div>
+          <div class="main-content-image">
+            <%= image_tag 'question.png', class: 'page-graph', width: '70%', height: '70%' %>
+          <div class="main-font">
+            <p>自分のしあわせだった事、そうではなかった事を比較できる機能付。自分にとって
+            しあわせになる為に必要だと感じていたことが実はそうでもなかったり、逆に意外な事にしあわせを感じたり。</p>
+          </div>
+        </div>
+       
       </div>
     </div>
   </div>
-<br>
-<br>
 
 
-/*<style>*/
-/*  body {*/
-/*    background-color: #B0C4DE;*/
-/*    height: 300px;*/
-/*  }*/
-/*</style>
 
