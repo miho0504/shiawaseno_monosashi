@@ -120,9 +120,11 @@ font-family: 'Yusei Magic', sans-serif;
   padding-left: 250px;
 }
 
+// 投稿ボタン
 .container-newbtn {
    font-family: 'M PLUS Rounded 1c', sans-serif;
-   padding-top: 130px;
+
+   
 }
 
 // 投稿編集ボタン
@@ -205,7 +207,10 @@ font-family: 'Yusei Magic', sans-serif;
   transform: translateY(0);}
 }
 
-// 1日1回のポップアップ
+
+/*---------------
+    #1日1回のモーダル
+---------------*/
 .bg_onetime_popup {
     position: fixed;
     top: 0px;

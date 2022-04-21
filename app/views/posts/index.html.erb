@@ -17,7 +17,7 @@
 <!--1日1回表示するポップアップ-->
 <div class="bg_onetime_popup">
   <div class="onetime_popup">
-      <p class="onetime_popup_title">今日のしあわせのヒント</p>
+      <p class="onetime_popup_title">こんにちは！今日のしあわせのヒント</p>
       <div class="onetime_popup_content">
   <script>
   var a=["スポーツをすると幸福度が上がるよ",
@@ -40,10 +40,12 @@
 <script>
 // 画面を開いたら
 window.addEventListener('load', function() {
+  
 // もしクッキーがなければ
   if( !sessionStorage.getItem('disp_popup') ) {
     sessionStorage.setItem('disp_popup', 'on');
     var popup = document.getElementsByClassName('bg_onetime_popup');
+    
 // ポップアップ表示もしくは消す処理
     popup[0].classList.add('js_active');
     popup[0].onclick = function() {
