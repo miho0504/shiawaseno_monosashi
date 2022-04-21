@@ -18,9 +18,24 @@
 .container {
    font-family: 'M PLUS Rounded 1c', sans-serif;
  }
+ 
+ /* タブレット */
+@media (max-width: 1000px) {
+  .container {
+      width: max;
+  }
+}
+
+/* スマホ */
+@media (max-width: 670px) {
+  .main {
+    width: 375px;
+  }
+}
+
 
 /*---------------
-    #Header
+    #ヘッダー
 ---------------*/
 
 .site-header {
@@ -68,22 +83,12 @@
   transition: all 0.5s ease;}
 }
 
-@media screen and  (max-width: 1024px) {
-.navbar-nav{
-    padding-top: 300px;
-  }
-}
-
-@media screen and (max-width: 599px) {
-  // スマホ用
- .navbar-nav{
-     
-
-  }
+.nav-link a {
+  color: brack;
 }
 
 /*---------------
-    #Fotter
+    #フッター
 ---------------*/
 
 .content {
@@ -95,22 +100,8 @@
   font-family: 'M PLUS Rounded 1c', sans-serif;
   color: white;
   height: 60px;
+  text-align: center;
 }
-
-/* タブレット*/
-@media (max-width: 1024px) {
-  .footer  {
-
-  }
-}
-
-/* スマホ */
-@media (max-width: 599px) {
-  .footer r {
-
-  }
-}
-
 
 /*---------------
     #入力画面ボックス
@@ -133,210 +124,22 @@
 }
 
 /*---------------
-    #ボタン関連
+    #ログイン・新規登録
 ---------------*/
 
-// 送信ボタン
-.sendbtn {
-  align-items: center;
-  background-clip: padding-box;
-  background-color: #3fbd35;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 190px;
- &:hover,
- &:focus {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
- &:sendbtn:hover {
-  transform: translateY(-1px);}
- &:sendbtn:active {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);}
+.container content{
+   width: 100%;
+ }
+
+.section-content {
+  padding: 60px 0px 100px 200px;
 }
 
-// プロフィール編集ボタン
-// .editbtn {
-//   align-items: center;
-//   background-clip: padding-box;
-//   background-color: #3fbd35;
-//   border: 1px solid transparent;
-//   border-radius: .25rem;
-//   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-//   box-sizing: border-box;
-//   color: #fff;
-//   cursor: pointer;
-//   display: inline-flex;
-//   font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-//   font-size: 16px;
-//   font-weight: 600;
-//   justify-content: center;
-//   line-height: 1.25;
-//   margin: 0;
-//   min-height: 3rem;
-//   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-//   position: relative;
-//   text-decoration: none;
-//   transition: all 250ms;
-//   user-select: none;
-//   -webkit-user-select: none;
-//   touch-action: manipulation;
-//   vertical-align: baseline;
-//   width: 180px;
-//  &:hover,
-//  &:focus {
-//   background-color: #333333;
-//   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
-//  &:sendbtn:hover {
-//   transform: translateY(-1px);}
-//  &:sendbtn:active {
-//   background-color: #333333;
-//   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-//   transform: translateY(0);}
-// }
 
-// 投稿詳細編集ボタン
-.edit-showbtn {
-  align-items: center;
-  background-clip: padding-box;
-  background-color: #3fbd35;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 5px;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 50px;
- &:hover,
- &:focus {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
- &:sendbtn:hover {
-  transform: translateY(-1px);}
- &:sendbtn:active {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);}
-}
-
-// 更新ボタン
-.updatebtn {
-  align-items: center;
-  background-clip: padding-box;
-  background-color: #3fbd35;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 190px;
- &:hover,
- &:focus {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
- &:sendbtn:hover {
-  transform: translateY(-1px);}
- &:sendbtn:active {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);}
-}
-
-// 削除・退会ボタン
-.quitbtn {
-  align-items: center;
-  background-clip: padding-box;
-  background-color:#DC143C;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 5px;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 50px;
- &:hover,
- &:focus {
-  background-color: #DEB887;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
- &:sendbtn:hover {
-  transform: translateY(-1px);}
- &:sendbtn:active {
-  background-color: #c85000;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);}
-}
-
-// ログインボタン
+/*---------------
+    #ボタン関連
+---------------*/
+// ログイン・新規登録ボタン
 .loginbtn {
   align-items: center;
   background-clip: padding-box;
@@ -375,44 +178,3 @@
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);}
 }
-
-// 新規登録ボタン
-.newbtn {
-  align-items: center;
-  background-clip: padding-box;
-  background-color: #3fbd35;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 190px;
- &:hover,
- &:focus {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
- &:sendbtn:hover {
-  transform: translateY(-1px);}
- &:sendbtn:active {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);}
-}
-
