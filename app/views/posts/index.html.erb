@@ -14,12 +14,13 @@
   <div id="modal" class="hidden">
   </div>
 
-<!--1日1回表示するポップアップ-->
-<div class="bg_onetime_popup">
-  <div class="onetime_popup">
-      <p class="onetime_popup_title">今日のしあわせのヒント</p>
-      <div class="onetime_popup_content">
-  <script>
+<!--1日1回出るモーダル-->
+<div id="js_modal" class="modal">
+  <div class="js_modal_close modal_bg"></div>
+  <div class="modal_wrap">
+    <div class="modal_inner">
+      <p>今日のしあわせのひとこと</p>
+        <script>
   var a=["スポーツをすると幸福度が上がるよ",
         "セロトニンは幸福度を高めるよ",
         "物より経験を重視した方が幸福度が上がるよ"];
@@ -28,7 +29,7 @@
   x=Math.floor(Math.random()*3); 
   document.write(a[x]);
   </script>
-      </div>
+    </div>
   </div>
 </div>
 
@@ -38,19 +39,62 @@
 </button>
 
 <script>
-// 画面を開いたら
-window.addEventListener('load', function() {
-// もしクッキーがなければ
-  if( !sessionStorage.getItem('disp_popup') ) {
-    sessionStorage.setItem('disp_popup', 'on');
-    var popup = document.getElementsByClassName('bg_onetime_popup');
-// ポップアップ表示もしくは消す処理
-    popup[0].classList.add('js_active');
-    popup[0].onclick = function() {
-    popup[0].classList.remove('js_active');
+window.onload = function() {
+  // cookieを配列に格納する
+  const cookieArray = new Array();
+  if(document.cookie != ''){
+    const tmp = document.cookie.split('; ');
+    for(let i=0;i<tmp.length;i++){
+      const data = tmp[i].split('=');
+      cookieArray[data[0]] = decodeURIComponent(data[1]);
     }
   }
-}, false);
+ 
+  // cookieの配列からmodalBrowseを取得する
+  const modalBrowse = cookieArray["modalBrowse"];
+  const modal = document.getElementById("js_modal");
+ 
+  // modalBrowseが無い場合のみモーダルを表示しつつ今日の23:59:59を期限にしたcookieをセット
+  if (!modalBrowse) {
+    modal.classList.add("is_active");
+    const date = new Date();
+    const todayEnd = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
+    const dateTime = date.getTime();
+    const todayEndTime = todayEnd.getTime();
+    const remainingTime = Math.ceil((todayEndTime - dateTime) / 1000);
+    document.cookie = 'modalBrowse=allready; max-age=' + remainingTime;
+  }
+ 
+  // 閉じるボタン
+  const modalClose = document.getElementsByClassName('js_modal_close');
+  for( var i = 0; i < modalClose.length; i++ ) {
+    modalClose[i].onclick = function () {
+      modal.classList.remove("is_active");
+    }
+  }
+ 
+}
+
+
+
+
+
+
+
+
+// // 画面を開いたら
+// window.addEventListener('load', function() {
+// // もしクッキーがなければ
+//   if( !sessionStorage.getItem('disp_popup') ) {
+//     sessionStorage.setItem('disp_popup', 'on');
+//     var popup = document.getElementsByClassName('bg_onetime_popup');
+// // ポップアップ表示もしくは消す処理
+//     popup[0].classList.add('js_active');
+//     popup[0].onclick = function() {
+//     popup[0].classList.remove('js_active');
+//     }
+//   }
+// }, false);
     
 jQuery(function() {
   let topBtn = $("#topBtn");
