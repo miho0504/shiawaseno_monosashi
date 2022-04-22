@@ -3,7 +3,11 @@
       <div class="box">
         <br>
         <h3>今日のしあわせ評価:<%= post.today_mood %></h3>
+        <% if post.content.present? %>
         <h3>一行で:<%= post.content %></h3>
+        <% else %>
+        <p>※一行日記は入力されてません</p>
+        <% end %>
       <div class="show_button">
         <%= button_to '編集', edit_post_path, method: :get, remote: true, class: "edit-showbtn" %>
         <%= button_to'削除', post_path(post), method: :delete, class: "quitbtn" %>
