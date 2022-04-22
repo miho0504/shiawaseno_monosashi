@@ -37,42 +37,15 @@
   pading: 30px;
 }
 
-/* タブレット */
-@media (max-width: 1000px) {
-.main-font h2 {
-  font-size: 15px;
-  padding: 10px;
+@media screen and (max-width: 479px) {
+.main {
+  width: 479px;
+  padding: 0px 50px 0 50px;
 }
-
-.main-font h3 {
-  font-size: 10px;
-  padding: 10px;
-}
-
 .page-logo {
-  float: right;
-  pading: 30px;
-}
-}
-
-/* スマホ */
-@media (max-width: 670px) {
-.main-font h2 {
-  font-size: 15px;
-  padding: 10px;
-}
-
-.main-font h3 {
-  font-size: 10px;
-}
-
-.page-logo {
-  float: right;
-  margin-left: 30px;
-}
-
-.main-content {
-    padding-left: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
 }
 }
 
@@ -113,14 +86,6 @@
   vertical-align: baseline;
   width: 180px;
   margin: 20px 20px 0px 20px;
-}
-
-/* スマホ */
-@media (max-width: 670px) {
-.top-loginbtn {
-  display: flex;
-  margin: 30px;
-}
 }
 
 // 紹介

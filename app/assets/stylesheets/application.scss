@@ -18,19 +18,12 @@
 .container {
    font-family: 'M PLUS Rounded 1c', sans-serif;
  }
- 
- /* タブレット */
-@media (max-width: 1000px) {
-  .container {
-      width: max;
-  }
-}
 
-/* スマホ */
-@media (max-width: 670px) {
-  .main {
-    width: 375px;
-  }
+
+@media screen and (max-width: 479px) {
+.container {
+
+}
 }
 
 /*---------------
