@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   private
   
   def correct_user
-      @users = current_user.followings
+      @users = current_user
     unless @users
       redirect_to posts_path
     end
