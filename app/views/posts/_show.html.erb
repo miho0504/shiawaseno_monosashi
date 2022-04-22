@@ -14,7 +14,8 @@
       </div>
         <br>
         <p>この日の日記をTwitterでシェアする</p>
-        <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}/&text=今日の自分のしあわせ評価【#{@post.today_mood}】一行日記【#{@post.content}】", title: 'Twitter', target: '_blank' %>
+        <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}/&text=今日の自分のしあわせ評価【#{@post.today_mood}】
+        一行日記【#{@post.content}】", title: 'Twitter', target: '_blank' %>
         <br>
       </div>
     </div>

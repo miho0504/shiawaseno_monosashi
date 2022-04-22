@@ -2,7 +2,7 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  
+
   def guest_sign_in
     user = User.guest
     sign_in user
@@ -30,4 +30,5 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
 end

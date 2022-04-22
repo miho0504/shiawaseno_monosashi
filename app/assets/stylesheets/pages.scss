@@ -11,14 +11,14 @@
   margin: 30px 0px 30px 0px;
 }
 
-// メイン文字
+
+/*---------------
+    #トップページ文字
+---------------*/
+
 .main-font {
   color: #444444;
   font-family: 'Zen Kaku Gothic New', sans-serif;
-}
-
-.main-font h1 {
-  font-size: 60px;
 }
 
 .main-font h2 {
@@ -37,7 +37,23 @@
   pading: 30px;
 }
 
-// ログインボタン
+@media screen and (max-width: 479px) {
+.main {
+  width: 479px;
+  padding: 0px 50px 0 50px;
+}
+.page-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+}
+
+
+/*---------------
+    #トップページログインボタン
+---------------*/
+
 .top-loginbtn {
   display: flex;
 }
@@ -82,7 +98,10 @@
   text-decoration: underline wavy #ff838b;
 }
 
-// トップページ説明文
+/*---------------
+    #トップページ説明文
+---------------*/
+
 .main-content-text {
   display: flex;
   width: 80%;

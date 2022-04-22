@@ -17,7 +17,7 @@ class PostsController < ApplicationController
       redirect_to posts_path, notice: t('defaults.message.created')
     else
       flash.now['alert'] = t('defaults.message.not_created')
-      render :_new
+      render :new
     end
   end
 

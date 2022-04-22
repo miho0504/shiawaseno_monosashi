@@ -51,6 +51,25 @@
   color: brack;
 }
 
+
+@media screen and (max-width: 479px) {
+.site-header {
+  background-color: #B0C4DE; 
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 8px 40px;
+  box-sizing: border-box;
+  padding-left: 100px;
+  position: fixed;
+}
+}
+
+
+
 /*---------------
     #フッター
 ---------------*/

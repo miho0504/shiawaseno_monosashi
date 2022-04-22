@@ -1,7 +1,7 @@
-  <%= render 'error_form', locals: { post: @post } %>
   <div class="container-new">
-    <div class="follow-relation col-12 col-md-10 text-center">
+    <div class="col-12 col-md-10 text-center">
       <div class="box">
+          <%= render 'error_form', locals: { post: @post } %>
         <%= form_with model: @post, local: true do |f| %>
       <div class="form-group">
         <%= f.label :今日のしあわせを振り返ろう %>
@@ -13,7 +13,7 @@
         <%= f.text_field :content, class: 'form-control' %>
       </div>
       <br>
-        <%= f.submit t('helpers.submit.create'), class: 'btn btn-primary' %>
+        <%= f.submit t('helpers.submit.create'), class: 'postbtn' %>
         <% end %>
       </div>
     </div>
