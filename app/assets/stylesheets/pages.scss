@@ -37,18 +37,12 @@
   pading: 30px;
 }
 
-@media screen and (max-width: 479px) {
-.main {
-  width: 479px;
-  padding: 0px 50px 0 50px;
+/* スマホ */
+@media screen and (max-width: 599px) {
+  .topBtn r {
+    
+  }
 }
-.page-logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto 
-}
-}
-
 
 /*---------------
     #トップページログインボタン
@@ -87,6 +81,15 @@
   width: 180px;
   margin: 20px 20px 0px 20px;
 }
+
+/* スマホ */
+@media screen and (max-width: 599px) {
+  .top-wrapper r {
+    width: 200px;
+    
+  }
+}
+
 
 // 紹介
 

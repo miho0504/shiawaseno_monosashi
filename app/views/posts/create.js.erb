@@ -1,0 +1,6 @@
+var errors = document.getElementById('errors');
+<% if @post.errors.present? %>
+  errors.innerHTML = 'エラ-'
+<% else %>
+  location.reload()
+<% end %>
