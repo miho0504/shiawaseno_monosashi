@@ -7,10 +7,15 @@
 }
 
 .main-content {
-  padding-top: 50px;
+  padding-top: 17px;
   margin: 30px 0px 30px 0px;
 }
 
+@media screen and (max-width: 599px) {
+  .main {
+  width : auto;
+}
+}
 
 /*---------------
     #トップページ文字
@@ -37,11 +42,28 @@
   pading: 30px;
 }
 
-/* スマホ */
 @media screen and (max-width: 599px) {
-  .topBtn r {
-    
-  }
+.main-font {
+ font-size: 15px;
+}
+.main-font h1 {
+  margin: 100px 0px 10px 10px;
+}
+
+.main-font h2 {
+  font-size: 15px;
+  padding: 3px;
+}
+
+.main-font h3 {
+  font-size: 10px;
+  padding: 10px;
+}
+
+// メイン画像
+.page-logo {
+  margin-right: 110px;
+}
 }
 
 /*---------------
@@ -84,12 +106,17 @@
 
 /* スマホ */
 @media screen and (max-width: 599px) {
-  .top-wrapper r {
-    width: 200px;
-    
-  }
+.top-loginbtn {
+  display: flex;
+  padding-left: 10px;
 }
 
+.login-btn {
+  font-size: 10px;
+  width: 100px;
+  margin: 5px 5px 0px 5px;
+}
+}
 
 // 紹介
 
@@ -99,6 +126,15 @@
   font-size: 30px;
   width: 35%;
   text-decoration: underline wavy #ff838b;
+}
+
+@media screen and (max-width: 599px) {
+.main-content-Introduction {
+  width: 300px;
+  font-size: 17px;
+  padding: 10px;
+  margin: 18px 0px 10px 0px;
+}
 }
 
 /*---------------
@@ -148,4 +184,35 @@
     border-radius: 10px;
     width: 350px;
     margin: 10px;
+}
+
+@media screen and (max-width: 599px) {
+.main-content-text {
+  display:block;
+  width: 200px;
+  margin-right: 110px;
+}
+.main-content-image {
+  padding: 20px 0px 40px 0px;
+}
+
+.box2 {
+    width: 300px;
+    margin: 10px;
+}
+
+.main-Heading {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.main-Heading p{
+  margin: 10px;
+  font-size: 20px;
+}
+
+.main-font {
+  padding-top: 50px;
+  font-size: 13px;
+}
 }

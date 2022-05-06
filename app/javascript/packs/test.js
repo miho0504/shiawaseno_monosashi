@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function(){
   for(let i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener('click', tabSwitch, false);
   }
-
   // タブをクリックすると実行する関数
   function tabSwitch(){
     // タブのclassの値を変更
@@ -16,4 +15,4 @@ document.addEventListener('DOMContentLoaded', function(){
     const index = arrayTabs.indexOf(this);
     document.getElementsByClassName('panel')[index].classList.add('is-show');
   };
-}, false);
+}, false);  

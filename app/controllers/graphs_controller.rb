@@ -48,13 +48,14 @@ class GraphsController < ApplicationController
     # 日付のラベル　javascriptの変数として渡す
     @chartlabels = @post_by_day.map(&:first).to_json.html_safe
     @chartdatas = @post_by_day.map(&:second)
+
     
      # 折線グラフ
-    @cumulative = []
-    sum=0
-    @chartdatas.each do |a|
-      sum = sum + a
-      @cumulative<<sum
-    end
+    # @cumulative = []
+    # sum=0
+    # @chartdatas.each do |a|
+    #   sum = sum + a
+    #   @cumulative<<sum
+    # end
   end
 end

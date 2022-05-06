@@ -15,6 +15,18 @@ p {
     text-align:center;
 }
 
+@media screen and (max-width: 599px) {
+h2 {
+    font-size: 20px !important;
+}
+p {
+    font-size: 12px;
+}
+.body {
+  
+}
+}
+
 /*---------------
     #チャートグラフ
 ---------------*/
@@ -22,6 +34,14 @@ p {
 .chart-glaf {
   padding-top: 100px;
   padding-left: 200px;
+}
+
+@media screen and (max-width: 599px) {
+.chart-glaf {
+  padding-top: 50px !important;
+  padding-left: 10px !important;
+  height: 300px;
+}
 }
 
 /*---------------
@@ -42,7 +62,7 @@ p {
   text-align:center;
   cursor:pointer;
 }
-.panel-group{
+.panel-group {
   height:300px;
   border-top:none;
   font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -70,4 +90,14 @@ p {
   height: 300px;
   border: solid 1px;
   overflow: scroll;
+}
+
+@media screen and (max-width: 599px) {
+.tab-group  {
+  width: 350px;
+  padding-right: 20px;
+}
+.panel-group {
+  width: auto;
+}
 }

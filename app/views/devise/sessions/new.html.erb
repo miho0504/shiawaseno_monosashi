@@ -1,6 +1,6 @@
 <div class="col-12 col-md-10 text-center">
   <div class="section-content">
-    <div class="box">
+    <div class="box_2">
       <%= render "devise/shared/error_messages", resource: resource %>
       <h2>ログイン</h2>
     <div class="section_friend_list">
@@ -19,7 +19,8 @@
           <%= f.label :パスワードを保存する %>
         </div>
         <% end %>
-        <%= link_to "パスワードの再発行", new_user_password_path %><br />
+        <a><%= link_to "パスワードをお忘れの方はこちら", new_user_password_path, class: "login_font" %><br /></a>
+        <a><%= link_to "アカウントをお持ちでない方はこちら", new_user_registration_path, class: "login_font" %><br /></a>
         <br>
         <div class="actions">
           <%= f.submit "ログイン", class: "loginbtn" %>

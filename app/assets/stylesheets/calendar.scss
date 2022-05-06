@@ -85,3 +85,15 @@
     width: 120px;
     background-color: white;
   }
+  
+/* スマホ */
+@media screen and (max-width: 599px) {
+  .simple-calendar {
+    width: 350px;
+    margin: 0px;
+  }
+  
+  .table-striped {
+    height: 10px;
+  }
+}

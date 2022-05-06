@@ -25,8 +25,3 @@ global.Chart = Chart;
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-// import 'comparison.js'
-// import 'popup.js'
-// import 'topbtn.js'
-
-
