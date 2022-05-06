@@ -1,0 +1,6 @@
+var errors = document.getElementById('errors');
+<% if @post.errors.present? %>
+  errors.innerHTML = '投稿は1日1回までです'
+<% else %>
+  location.reload()
+<% end %>

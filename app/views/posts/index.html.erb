@@ -17,21 +17,18 @@
 <!--1日1回出るモーダル-->
 <div id="js_modal" class="modal">
   <div class="js_modal_close modal_bg"></div>
-  <div class="modal_wrap">
+  <div class="box_popup">
+    <a class="js_modal_close modal_close">
+      閉じる
+    </a>
     <div class="modal_inner">
       <p>今日のしあわせのひとこと</p>
-        <script>
-  var a=["スポーツをすると幸福度が上がるよ",
-        "セロトニンは幸福度を高めるよ",
-        "物より経験を重視した方が幸福度が上がるよ"];
-  var x;
-  // 乱数生成
-  x=Math.floor(Math.random()*3); 
-  document.write(a[x]);
-  </script>
+     <p><%= javascript_pack_tag 'popup_text' %></p>
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'popup' %>
 
 <!--日記作成ボタン-->
 <button_to  id="topBtn" class="topBtn">
@@ -39,53 +36,14 @@
 </button>
 
 <script>
-window.onload = function() {
-  // cookieを配列に格納する
-  const cookieArray = new Array();
-  if(document.cookie != ''){
-    const tmp = document.cookie.split('; ');
-    for(let i=0;i<tmp.length;i++){
-      const data = tmp[i].split('=');
-      cookieArray[data[0]] = decodeURIComponent(data[1]);
-    }
-  }
- 
-  // cookieの配列からmodalBrowseを取得する
-  const modalBrowse = cookieArray["modalBrowse"];
-  const modal = document.getElementById("js_modal");
- 
-  // modalBrowseが無い場合のみモーダルを表示しつつ今日の23:59:59を期限にしたcookieをセット
-  if (!modalBrowse) {
-    modal.classList.add("is_active");
-    const date = new Date();
-    const todayEnd = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
-    const dateTime = date.getTime();
-    const todayEndTime = todayEnd.getTime();
-    const remainingTime = Math.ceil((todayEndTime - dateTime) / 1000);
-    document.cookie = 'modalBrowse=allready; max-age=' + remainingTime;
-  }
- 
-  // 閉じるボタン
-  const modalClose = document.getElementsByClassName('js_modal_close');
-  for( var i = 0; i < modalClose.length; i++ ) {
-    modalClose[i].onclick = function () {
-      modal.classList.remove("is_active");
-    }
-  }
- 
-}
-    
 jQuery(function() {
   let topBtn = $("#topBtn");
-  // 画面を開いたら
-  $(window).on('load', function() {
-    // ボタンがしたから出てくる
-    topBtn.stop().animate({ bottom: "70px" }, 1600);
+// 画面を開いたら
+ $(window).on('load', function() {
+// ボタンがしたから出てくる
+topBtn.stop().animate({ bottom: "70px" }, 1600);
   });
 });
 </script>
-
-
-
 
 

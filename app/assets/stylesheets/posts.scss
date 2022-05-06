@@ -13,25 +13,25 @@
 .topBtn {
   position: relative;
   display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    outline: 0;
-    overflow: hidden;
-    color: #fff;
-    background: #FF9900;
-    border-radius: 8px;
-    box-shadow: 0 0 0 5px #FF9900, 0 2px 3px 5px rgba(0,0,0,0.5);
-    border: 2px dashed #fff;
-    padding: .5em 1em;
-    float: right;
-    width: 200px;
-    font-size: 20px;
-    animation-name:updown1;
-    animation-delay:0s;
-    animation-duration: 3s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    right: 100px;
+  text-align: center;
+  text-decoration: none;
+  outline: 0;
+  overflow: hidden;
+  color: #fff;
+  background: #FF9900;
+  border-radius: 8px;
+  box-shadow: 0 0 0 5px #FF9900, 0 2px 3px 5px rgba(0,0,0,0.5);
+  border: 2px dashed #fff;
+  padding: .5em 1em;
+  float: right;
+  width: 200px;
+  font-size: 20px;
+  animation-name:updown1;
+  animation-delay:0s;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  right: 100px;
 }
 
 .link {
@@ -56,17 +56,12 @@ font-family: 'Yusei Magic', sans-serif;
   }
 }
 
-/* タブレット*/
-@media screen and (max-width: 1024px) {
-  .topBtn  {
-    left: 550px;
-  }
-}
-
 /* スマホ */
 @media screen and (max-width: 599px) {
-  .topBtn r {
-    left: 550px;
+  .topBtn {
+    width: 130px;
+    font-size: 12px;
+    right: 10px;
   }
 }
 
@@ -120,11 +115,15 @@ font-family: 'Yusei Magic', sans-serif;
   padding-left: 250px;
 }
 
+@media screen and (max-width: 599px) {
+ .show_button { 
+  padding-left: 78px;
+ }
+}
+
 // 投稿ボタン
 .container-newbtn {
    font-family: 'M PLUS Rounded 1c', sans-serif;
-
-   
 }
 
 // 投稿編集ボタン
@@ -302,16 +301,3 @@ font-family: 'Yusei Magic', sans-serif;
     text-align: center;
     font-size: 25px;
 
-.modal_inner {
-  text-align: left;
-  padding: 30px 30px 40px;
-  font-size: 20px;
-}
-
-.modal_close {
-  color: #fff;
-  font-size: 32px;
-  position: absolute;
-  top: -30px;
-  right: 18px;
-}

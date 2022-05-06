@@ -10,7 +10,6 @@ class Post < ApplicationRecord
   # 今日の感情表示
   enum today_mood: { ◯: 0, △: 1, ×: 2 }
   
-  
   private
   
   # 1日1回迄の投稿制限

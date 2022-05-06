@@ -1,9 +1,9 @@
 <div class="chart-glaf">
     <div class="follow-relation col-12 col-md-10 text-center">
-      <h2>月で比較してみよう<br><%= @month.month %>月</h2>
-      <%= link_to '< prev', graphs_path({date: @month.prev_month.strftime("%Y-%m")}) %>
-      <%= link_to 'next >', graphs_path({date: @month.next_month.strftime("%Y-%m")}) %>
-      <canvas id="myChart" width="400" height="120"> </canvas>
+      <h2>気分の波を見てみよう<br><%= @month.month %>月</h2>
+      <%= link_to '< prev', graphs_path({date: @month.prev_month.strftime("%Y%m")}) %>
+      <%= link_to 'next >', graphs_path({date: @month.next_month.strftime("%Y%m")}) %>
+      <canvas id="myChart" width="400" height="200"> </canvas>
       <script> 
          var ctx = document.getElementById("myChart").getContext('2d');
          var myChart = new Chart(ctx, {
@@ -12,8 +12,8 @@
             labels: <%= @chartlabels %>,
             datasets: [{},
             {
-                label: "気分の波",
-                data: <%= @chartdatas %>,
+                // label: "気分の波",
+                data: <%= @chartdatas.tap {||} %>,
                 backgroundColor: '#FFDBC9',
                 borderColor: "#FF570D",
                 pointBackgroundColor: "#FF570D", 
@@ -21,22 +21,25 @@
                 fill: true,
                 tension: 0.5,
             }],
-            options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
+          },
+          options: {
+              label: {
+            　    display: false
+              },
+              scales: {
+                y: {
+                  display: false
+                },
+                   x: {
+                  display: false
+                }
               }
-            }]
-          }
-      }
-        },
+            }
     });
+
 </script>
  </div>
   </div>
-
-
 <br>
 <br>
 <h2>自分にとってのしあわせを見つけよう</h2>
@@ -85,24 +88,4 @@
   </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  // タブに対してクリックイベントを適用
-  const tabs = document.getElementsByClassName('tab');
-  for(let i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener('click', tabSwitch, false);
-  }
-
-  // タブをクリックすると実行する関数
-  function tabSwitch(){
-    // タブのclassの値を変更
-    document.getElementsByClassName('is-active')[0].classList.remove('is-active');
-    this.classList.add('is-active');
-    // コンテンツのclassの値を変更
-    document.getElementsByClassName('is-show')[0].classList.remove('is-show');
-    const arrayTabs = Array.prototype.slice.call(tabs);
-    const index = arrayTabs.indexOf(this);
-    document.getElementsByClassName('panel')[index].classList.add('is-show');
-  };
-}, false);
-</script>
+<%= javascript_pack_tag 'test' %>

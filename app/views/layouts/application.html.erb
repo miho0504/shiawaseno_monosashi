@@ -14,10 +14,17 @@
    <head>
    <body>
       <%= render 'layouts/header' %>
-      <%= render 'layouts/flashes' %>
+      <%= render 'layouts/flash_messages' %>
 　　　<div class="container content">
         <%= yield %>
       </div>
       <%= render 'layouts/footer' %>
   </body>
 </html>
+
+<!--フラッシュメッセージの秒数-->
+<script>
+$(function(){
+  $(".alert").fadeOut(4000);
+});
+</script>

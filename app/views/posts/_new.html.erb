@@ -1,8 +1,8 @@
-  <div class="container-new">
-    <div class="col-12 col-md-10 text-center">
-      <div class="box">
+<div class="col-12 col-md-10 text-center">
+    <div class="box">
+        <div id="errors"></div>
           <%= render 'error_form', locals: { post: @post } %>
-        <%= form_with model: @post, local: true do |f| %>
+        <%= form_with model: @post, local: false do |f| %>
       <div class="form-group">
         <%= f.label :今日のしあわせを振り返ろう %>
         <%= f.select :today_mood, Post.today_moods.keys.to_a, {}, class: 'form-control' %>
