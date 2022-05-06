@@ -4,9 +4,7 @@
         <br>
         <h3>今日のしあわせ評価:<%= post.today_mood %></h3>
         <% if post.content.present? %>
-          <h3>一行で:<%= post.content %></h3>
-        <% else %>
-          <p>１行日記が書かれてません</p>
+
         <% end %>
       <div class="show_button">
         <%= button_to '編集', edit_post_path, method: :get, remote: true, class: "edit-showbtn" %>
