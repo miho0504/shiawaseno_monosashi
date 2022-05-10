@@ -1,52 +1,73 @@
 <center>
-  <div class="main">
-    <div class="main-logo">
-      <br>
-      <br>
-      <h1>しあわせのものさし</h1>
-      <h2>自分にとっての「しあわせ」を見つけよう</h2>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="main-Heading">
-      <h3>しあわせのものさしって？</h3>
-    </div>
-    <br>
-      <p>何をしてもしあわせを感じない。</p>
-      <p>自分にとってのしあわせが何かを見つけるためのサービスです</p>
-    <div class="main-Heading">
-      <h3>カレンダーに自分の1日の幸せを1行と評価を入力しよう</h3>
-    </div>
-    <br>
-      <p>入力はカンタン。今日自分がしあわせだったかどうかを◯ △ ×で評価して、</p>
-      <p>しあわせだった亊を一行で書き込むだけ</p>
-    <div class="main-Heading">
-      <h3>自分のしあわせをグラフで比較してみよう</h3>
-    </div>
-    <br>
-      <p>月ごとに◯ △ ×がどの位あったか比較できるグラフ付き</p>
-      <p>自分にとっての幸せだったことが意外とそうでもなかったり</p>
-    <div class="main-Heading">
-      <h3>さあ、自分のしあわせのものさしを知ろう</h3>
-    </div>
-    <div class="top-btn">
-      <div class="login-btn">
+    <div class="main">
+      <div class="main-content">
+        <div class="font-group">
+         <%= image_tag 'toplogo.png', class: 'page-logo', width: '40%', height: '40%' %>
+        </div>
+        <div class="main-font">
+          <h1>しあわせのものさし</h1>
+          <h2>自分にとっての「しあわせ」を見つけよう</h2>
+          <h3>しあわせのものさしは、日記にしあわせ評価しその理由を書いてもらい、自分のしあわせを可視化するサービスです。</h3>
+        </div>
+       </div>
       
+         <div class="top-loginbtn">
+        <div class="buttons">
+          <%= link_to 'ログイン', new_user_session_path, class: "login-btn" %></p>
+        </div>
+        <div class="buttons">
+          <%= link_to '新規登録', new_user_registration_path, class: "login-btn" %></p>
+        </div>
+        <div class="buttons">
+          <%= link_to '覗いてみる', users_guest_sign_in_path, method: :post, class: "login-btn" %></p>
+        </div>
+      </div>
+    </div>
+    
+ 
+    <div class="main-content-Introduction">
+      <p>しあわせのものさしの特徴</p>
+    </div>
+  
+      <div class="main-content-text">
+        <div class="box2">
+          <div class="main-Heading">
+            <p>しあわせを書き出す</p>
+          </div>
+            <div class="main-content-image">
+              <%= image_tag 'diary.png', class: 'page-graphr', width: '70%', height: '70%' %>
+            <div class="main-font">
+                <p>入力はカンタン。今日の自分のしあわせ振り返ってみてを◯ △ ×で評価。その理由を一行で書き込むだけ</p>
+            </div>
+          </div>
+        </div>
+    
+        <div class="box2">
+          <div class="main-Heading">
+            <p>グラフで比較する</p>
+          </div>
+          <div class="main-content-image">
+            <%= image_tag 'graph.png', class: 'page-graph', width: '100%', height: '100%' %>
+          <div class="main-font">
+            <p>◯ △ ×の数がどの時期に多かったのかパッとみて分かるグラフ付。自分の気分の波を把握することができるよ。</p>
+          </div>
+        </div>
+      </div>
+        
+        <div class="box2">
+          <div class="main-Heading">
+            <p>しあわせを比較する</p>
+          </div>
+          <div class="main-content-image">
+            <%= image_tag 'question.png', class: 'page-graph', width: '70%', height: '70%' %>
+          <div class="main-font">
+            <p>自分のしあわせだった事、そうではなかった事を比較できる機能付。自分にとって
+            しあわせになる為に必要だと感じていたことが実はそうでもなかったり、逆に意外な事にしあわせを感じたり。</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-<br>
 
 
-<style>
-/*  body {*/
-/*    background-color: #B0C4DE;*/
-/*  }*/
-/*</style>
 

@@ -13,25 +13,25 @@
 .topBtn {
   position: relative;
   display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    outline: 0;
-    overflow: hidden;
-    color: #fff;
-    background: #FF9900;
-    border-radius: 8px;
-    box-shadow: 0 0 0 5px #FF9900, 0 2px 3px 5px rgba(0,0,0,0.5);
-    border: 2px dashed #fff;
-    padding: .5em 1em;
-    float: right;
-    width: 200px;
-    font-size: 20px;
-    animation-name:updown1;
-    animation-delay:0s;
-    animation-duration: 3s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    right: 100px;
+  text-align: center;
+  text-decoration: none;
+  outline: 0;
+  overflow: hidden;
+  color: #fff;
+  background: #FF9900;
+  border-radius: 8px;
+  box-shadow: 0 0 0 5px #FF9900, 0 2px 3px 5px rgba(0,0,0,0.5);
+  border: 2px dashed #fff;
+  padding: .5em 1em;
+  float: right;
+  width: 200px;
+  font-size: 20px;
+  animation-name:updown1;
+  animation-delay:0s;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  right: 100px;
 }
 
 .link {
@@ -56,72 +56,232 @@ font-family: 'Yusei Magic', sans-serif;
   }
 }
 
-// 今日のひとこと
-.word {
-  padding-top: 50px;
-  padding-left: 280px;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-}
-.words p {
-  margin: 0; 
-  padding-top: 0px;
+/* スマホ */
+@media screen and (max-width: 599px) {
+  .topBtn {
+    width: 130px;
+    font-size: 12px;
+    right: 10px;
+  }
 }
 
-.balloon5 {
-  width: 100%;
-  margin: 1.5em 0;
-  overflow: hidden;
-}
+/*---------------
+    #ボタン関連
+---------------*/
+// 投稿ボタン
 
-.balloon5 .faceicon {
-  float: left;
-  margin-right: -90px;
-  width: 80px;
-}
-
-.balloon5 .faceicon img{
-  width: 100%;
-  height: auto;
-  border: solid 3px #d7ebfe;
-  border-radius: 50%;
-}
-
-.balloon5 .chatting {
-  width: 100%;
-}
-
-.says {
-  display: inline-block;
-  position: relative; 
-  margin: 5px 0 0 105px;
-  padding: 17px 13px;
-  border-radius: 12px;
-  background: #FFE4B5;
-}
-
-.says:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 18px; 
-  left: -24px;
-  border: 12px solid transparent;
-  border-right: 12px solid #FFE4B5;
-}
-
-.says p {
+.postbtn  {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #3fbd35;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
   margin: 0;
-  padding: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 190px;
+ &:hover,
+ &:focus {
+  background-color: #333333;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
+ &:sendbtn:hover {
+  transform: translateY(-1px);}
+ &:sendbtn:active {
+  background-color: #333333;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);}
 }
 
-// 投稿詳細ボタン配置
+// 投稿詳細ボタン
 .show_button {
   display:flex;
-  padding-left: 280px;
+  padding-left: 250px;
 }
 
+@media screen and (max-width: 599px) {
+ .show_button { 
+  padding-left: 78px;
+ }
+}
+
+// 投稿ボタン
 .container-newbtn {
    font-family: 'M PLUS Rounded 1c', sans-serif;
-   padding-top: 130px;
 }
 
+// 投稿編集ボタン
+.edit-showbtn {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #3fbd35;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 5px;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 50px;
+ &:hover,
+ &:focus {
+  background-color: #333333;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
+ &:sendbtn:hover {
+  transform: translateY(-1px);}
+ &:sendbtn:active {
+  background-color: #333333;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);}
+}
+
+// 投稿削除ボタン
+.quitbtn {
+  align-items: center;
+  background-clip: padding-box;
+  background-color:#DC143C;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 5px;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 50px;
+ &:hover,
+ &:focus {
+  background-color: #DEB887;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
+ &:sendbtn:hover {
+  transform: translateY(-1px);}
+ &:sendbtn:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);}
+}
+
+
+/*---------------
+    #1日1回のモーダル
+---------------*/
+.bg_onetime_popup {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.bg_onetime_popup.js_active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.onetime_popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50%;
+    min-width: 500px;
+    cursor: pointer;
+    background: #EEEEEE;
+    box-shadow: 0px 0px 0px 10px #EEEEEE;
+    border: dashed 2px #444444;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.onetime_popup_title::before,
+.onetime_popup_title::after {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    font-size: 20px;
+}
+.onetime_popup_title::before {
+    transform: rotate(45deg);
+}
+.onetime_popup_title::after {
+    transform: rotate(-45deg);
+}
+
+.onetime_popup_content {
+    padding: 60px 30px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.modal_close {
+  color: gray;
+  font-size: 25px;
+  position: absolute;
+  right: 50px;
+  top: 265px;
+}
+
+@media screen and (max-width: 599px) {
+.modal_close { 
+  color: gray;
+  font-size: 15px;
+  position: absolute;
+  top: 363px;
+  right: 164px;
+ }
+}

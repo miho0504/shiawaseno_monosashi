@@ -1,5 +1,99 @@
+ /*---------------
+    #カレンダー
+---------------*/
+
+.simple-calendar {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 80px;
+    
+  // カレンダー全体
+  .table-striped {
+    border: 2px solid;
+    border-color: #A9A9A9;
+    border-radius: 8px;
+  }
+  
+  .table-striped a {
+    font-size: 30px;
+    text-decoration: none;
+    font-weight:  bold;
+    color: #FFA500;
+    &hover {
+    color: #007db9;;
+    box-shadow: none;
+    background: #fff;
+    transform: translate3d(0, 5px, 0);
+}
+  }
+  
+  // カレンダーの枠線
+  .table-striped tr{
+    border: 2px solid;
+    border-left: 2px;
+    border-color: #a8a8a8;
+    border-radius: 8px;
+  }
+  
+    // カレンダーの枠線
+  .table-striped thead{
+    background-color: white;
+  }
+  
+  // カレンダーの月
+  .calendar-heading {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Kosugi Maru', sans-serif;
+    // padding-top: 40px;
+  }
+
+  // カレンダー中身
+  .day {}
+  .wday-0 {color: #FF4F50;}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {color: #1E90FF;}
+  
+  .today {background-color: #c3dfec !important;}
+  .past {}
+  .future {}
+
+  .start-date {background-color: #BAD3FF;}
+
+  .prev-month {;}
+  .next-month {;}
+  .current-month {background-color: white;}
+
+  .has-events {}
+}
+
+  .table-striped {
+      height: 500px;
+      width: 100px;
+      background-color: #EEEEEE;
+  }
+
+
 .simple-calendar table tbody tr{
     height: 80px;
     width: 120px;
     background-color: white;
   }
+  
+/* スマホ */
+@media screen and (max-width: 599px) {
+  .simple-calendar {
+    width: 350px;
+    margin: 0px;
+  }
+  
+  .table-striped {
+    height: 10px;
+  }
+}

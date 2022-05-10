@@ -1,37 +1,62 @@
-    <header class="site-header">
-      <nav class="navbar navbar-expand-md">
-        <div class="header_logo">
-          <%= link_to image_tag("cat.png"), root_path %>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
-              <li class="nav-item">
-                <%= link_to 'MYDIARY', posts_path, class: "nav-link"  %>
-              </li>
-              <li class="nav-item">
-                <%= link_to 'GRAPH', graphs_path, class: "nav-link"  %>
-              </li>
-             <li class="nav-item">
-                <%= link_to 'PROFILE', users_show_path, class: "nav-link"  %>
-              </li>
-              <div class="logout">
-                <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "nav-link", data: { confirm: 'ログアウトしますか？' } %>
-              </div>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to "SIGNUP", new_user_registration_path, class: "nav-link" %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "LOGIN", new_user_session_path, class: "nav-link"  %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    
-    
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg">
+      <div class="header_logo">
+        <%= link_to image_tag("diary.png"), root_path %>
+      </div>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="hamburger">
+      </div>
+    <div class="openbtn1"><span></span><span></span><span></span></div>
+      <nav id="g-nav">
+        <div id="g-nav-list">
+          <ul class="header-nav">
+          <% if user_signed_in? %>
+            <li>
+              <a class="nav-item">
+              <%= link_to '日記', posts_path, class: "nav-link" %>
+              </a>
+            </li>
+            <li>
+              <a class="nav-item">
+              <%= link_to 'グラフ', graphs_path, class: "nav-link"  %>
+              </a>
+            </li>
+            <li>
+              <a class="nav-item">
+              <%= link_to 'プロフィール', users_show_path, class: "nav-link"  %>
+              </a>
+            </li>
+            <li>
+              <a class="nav-item">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link", data: { confirm: 'ログアウトしますか？' } %>
+              </a>
+            </li>
+          <% else %>
+            <a class="nav-item">
+              <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+            </a>
+            <a class="nav-item">
+              <%= link_to "ログイン", new_user_session_path, class: "nav-link"  %>
+            </a>
+            <a class="nav-item">
+            <%= link_to '覗いてみる', users_guest_sign_in_path, method: :post, class: "nav-link" %>
+            </a>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+<script>
+$(".openbtn1").click(function () {
+  $(this).toggleClass('active');
+    $("#g-nav").toggleClass('panelactive');
+});
+
+$("#g-nav a").click(function () {
+    $(".openbtn1").removeClass('active');
+    $("#g-nav").removeClass('panelactive');
+});
+</script>

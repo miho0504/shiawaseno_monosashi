@@ -17,89 +17,7 @@
  
 .container {
    font-family: 'M PLUS Rounded 1c', sans-serif;
-   padding-top: 130px;
  }
- 
- .container-new {
-   font-family: 'M PLUS Rounded 1c', sans-serif;
-   padding-top: 130px;
-   padding-left: 165px;
- }
-
-.image_switch {
-  width:55px;
-  height: 55px;
-  margin-right: 20px;
-}
-
-/*---------------
-    #Header
----------------*/
-
-.site-header {
-  background-color: #B0C4DE; 
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  padding: 8px 40px;
-  box-sizing: border-box;
-  padding-left: 100px;
-  position: fixed;
-}
-
-
-.header_logo {
-  padding-left: 100px;
-}
-.header_logo img{
-    width: 50px;
-}
-
-// メニューボタン
-.navbar-nav {
-  padding-top: 7px;
-  padding-right: 120px;
-  position:absolute;
-  right:20px;
-}
-
-.nav-link {
-  display: inline-block;
-  color: brack;
-&:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 1px;
-  transition: all 0.5s ease;}
-&:hover::after {
-  width: 100%;
-  height: 1px;
-  background-color: #333333;
-  transition: all 0.5s ease;}
-}
-
-
-/*---------------
-    #Fotter
----------------*/
-* {
-  margin:0; padding:0;
-}
-footer {
-  width: 100%;
-  height: 30px; 
-  text-align: center;
-  padding: 30px 0;
-  background-color: #B0C4DE;
-}
-.footer-text {
-  color: #fff;
-}
 
 /*---------------
     #入力画面ボックス
@@ -120,213 +38,140 @@ footer {
     padding: 0;
 }
 
+.box_2 {
+    padding: 0.2em 0.5em;
+    margin: 2em 0;
+    color: #565656;
+    background: #EEEEEE;
+    box-shadow: 0px 0px 0px 10px #EEEEEE;
+    border: dashed 2px #444444;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 50px;
+}
+.box_2 p {
+    margin: 0; 
+    padding: 0;
+}
+
+.box_popup {
+    padding: 0.2em 0.5em;
+    margin: 2em 0;
+    color: #565656;
+    background: #EEEEEE;
+    box-shadow: 0px 0px 0px 10px #EEEEEE;
+    border: dashed 2px #444444;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.box_popup p {
+    margin: 0; 
+    padding: 0;
+}
+
+
+
+@media screen and (max-width: 599px) {
+// モーダルボックス
+ .box {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+ }
+ .section-content {
+    padding: initial !important;
+ }
+
+// ログイン関連ボックス
+.box_2 {
+  padding: 2em 2em;
+  margin: 2em 0;
+  color: #565656;
+  background: #EEEEEE;
+  box-shadow: 0px 0px 0px 10px #EEEEEE;
+  border: dashed 2px #444444;
+  border-radius: 8px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.box_2 p {
+    margin: 0; 
+    padding: 0;
+}
+}
+
+.modal_box {
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+  color: #565656;
+  background: #EEEEEE;
+  box-shadow: 0px 0px 0px 10px #EEEEEE;
+  border: dashed 2px #444444;
+  border-radius: 8px;
+  margin: auto;
+  margin: 200px 300px;
+  padding: 100px;
+}
+
+.modal_box p {
+  font-size: 20px;
+}
+
+.box_popup {
+    padding: 0.2em 0.5em;
+    margin: 2em 0;
+    color: #565656;
+    background: #EEEEEE;
+    box-shadow: 0px 0px 0px 10px #EEEEEE;
+    border: dashed 2px #444444;
+    border-radius: 8px;
+    margin-top: 250px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 50px;
+}
+
+.box_popup p {
+    margin: 0; 
+    padding: 0;
+}
+
+.section-content {
+  padding: 60px 0px 100px 200px;
+  height: 640px;
+ }
+ 
+ @media screen and (max-width: 599px) {
+ .modal_box {
+   margin: 230px 50px;
+   padding: 50px;
+ }
+.modal_box p {
+   font-size: 13px;
+ }
+}
 
 /*---------------
-    #ボタン関連
+    #ログイン・新規登録
 ---------------*/
 
-// 送信ボタン
-.sendbtn {
-  align-items: center;
-  background-clip: padding-box;
-  background-color: #3fbd35;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 190px;
- &:hover,
- &:focus {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
- &:sendbtn:hover {
-  transform: translateY(-1px);}
- &:sendbtn:active {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);}
+.container content{
+   width: 100%;
+ }
+
+.section-content {
+  padding: 60px 0px 100px 200px;
+  height: 640px;
 }
 
-// プロフィール編集ボタン
-.editbtn {
-  align-items: center;
-  background-clip: padding-box;
-  background-color: #3fbd35;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 180px;
- &:hover,
- &:focus {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
- &:sendbtn:hover {
-  transform: translateY(-1px);}
- &:sendbtn:active {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);}
-}
-
-
-// 投稿詳細編集ボタン
-.edit-showbtn {
-  align-items: center;
-  background-clip: padding-box;
-  background-color: #3fbd35;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 50px;
- &:hover,
- &:focus {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
- &:sendbtn:hover {
-  transform: translateY(-1px);}
- &:sendbtn:active {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);}
-}
-
-// 更新ボタン
-.updatebtn {
-  align-items: center;
-  background-clip: padding-box;
-  background-color: #3fbd35;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 190px;
- &:hover,
- &:focus {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
- &:sendbtn:hover {
-  transform: translateY(-1px);}
- &:sendbtn:active {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);}
-}
-
-// 削除・退会ボタン
-.quitbtn {
-  align-items: center;
-  background-clip: padding-box;
-  background-color:#DC143C;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 50px;
- &:hover,
- &:focus {
-  background-color: #DEB887;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
- &:sendbtn:hover {
-  transform: translateY(-1px);}
- &:sendbtn:active {
-  background-color: #c85000;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);}
-}
-
-// ログインボタン
+// ログイン・新規登録・送信ボタン
 .loginbtn {
   align-items: center;
   background-clip: padding-box;
@@ -366,51 +211,12 @@ footer {
   transform: translateY(0);}
 }
 
-// 新規登録
-.newbtn {
-  align-items: center;
-  background-clip: padding-box;
-  background-color: #3fbd35;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
+.login_font {
+  font-size: 12px;
   text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 190px;
- &:hover,
- &:focus {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;}
- &:sendbtn:hover {
-  transform: translateY(-1px);}
- &:sendbtn:active {
-  background-color: #333333;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);}
 }
 
-
-// モーダル画面
-.modal-window {
-  padding: 0.5em 1em;
-  margin: 2em 0;
-  color: #222222;
-  background: #F0FFFF;
+.alert-success {
+  width: 100%;
+  height: 70px;
 }

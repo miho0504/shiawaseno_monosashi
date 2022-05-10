@@ -2,32 +2,158 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// トップペ
-
 .main {
-    width: 900px;
+  width: 1000px;
 }
 
-// トップページ文字
-
-.main-logo {
-  font-size: 80px;
-  color: #696969;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+.main-content {
+  padding-top: 17px;
+  margin: 30px 0px 30px 0px;
 }
 
-.main-logo h1 {
-  font-size: 80px;
+@media screen and (max-width: 599px) {
+  .main {
+  width : auto;
+}
+}
+
+/*---------------
+    #トップページ文字
+---------------*/
+
+.main-font {
   color: #444444;
   font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
-.main-logo h2 {
+.main-font h2 {
   font-size: 30px;
-  color: #444444;
+  padding: 10px;
 }
 
-// トップページ説明文
+.main-font h3 {
+  font-size: 20px;
+  padding: 10px;
+}
+
+// メイン画像
+.page-logo {
+  float: right;
+  pading: 30px;
+}
+
+@media screen and (max-width: 599px) {
+.main-font {
+ font-size: 15px;
+}
+.main-font h1 {
+  margin: 100px 0px 10px 10px;
+}
+
+.main-font h2 {
+  font-size: 15px;
+  padding: 3px;
+}
+
+.main-font h3 {
+  font-size: 10px;
+  padding: 10px;
+}
+
+// メイン画像
+.page-logo {
+  margin-right: 110px;
+}
+}
+
+/*---------------
+    #トップページログインボタン
+---------------*/
+
+.top-loginbtn {
+  display: flex;
+}
+
+.login-btn {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #FF9900;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 180px;
+  margin: 20px 20px 0px 20px;
+}
+
+/* スマホ */
+@media screen and (max-width: 599px) {
+.top-loginbtn {
+  display: flex;
+  padding-left: 10px;
+}
+
+.login-btn {
+  font-size: 10px;
+  width: 100px;
+  margin: 5px 5px 0px 5px;
+}
+}
+
+// 紹介
+
+.main-content-Introduction {
+  padding: 20px;
+  margin: 50px;
+  font-size: 30px;
+  width: 35%;
+  text-decoration: underline wavy #ff838b;
+}
+
+@media screen and (max-width: 599px) {
+.main-content-Introduction {
+  width: 300px;
+  font-size: 17px;
+  padding: 10px;
+  margin: 18px 0px 10px 0px;
+}
+}
+
+/*---------------
+    #トップページ説明文
+---------------*/
+
+.main-content-text {
+  display: flex;
+  width: 80%;
+  margin-bottom: 80px;
+}
+
+.main-content-image {
+  padding: 40px 0px 40px 0px;
+}
+
+.main-font {
+  padding-top: 50px;
+}
 
 .main-Heading {
   font-family: 'Zen Kaku Gothic New', sans-serif;
@@ -36,7 +162,7 @@
   border: dashed 2px white;
   padding: 0.2em 0.5em;
   color: #454545;
-  font-size: 20px;
+  font-size: 25px;
 &:after {
   position: absolute;
   content: '';
@@ -48,3 +174,45 @@
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);}
 }
 
+.box2 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;
+    background: #FFF;
+    border: solid 2px #888888;
+    border-radius: 10px;
+    width: 350px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 599px) {
+.main-content-text {
+  display:block;
+  width: 200px;
+  margin-right: 110px;
+}
+.main-content-image {
+  padding: 20px 0px 40px 0px;
+}
+
+.box2 {
+    width: 300px;
+    margin: 10px;
+}
+
+.main-Heading {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.main-Heading p{
+  margin: 10px;
+  font-size: 20px;
+}
+
+.main-font {
+  padding-top: 50px;
+  font-size: 13px;
+}
+}

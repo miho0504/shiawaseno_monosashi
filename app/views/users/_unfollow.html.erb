@@ -1,5 +1,0 @@
- <div class="follow_button">
-<%= form_for(current_user.following_relationships.find_by(following_id: user.id), html: { method: :delete }) do |f| %>
-  <%= f.submit "Unfollow", class: "btn btn-large follow-btn" %>
-<% end %>
-</div>

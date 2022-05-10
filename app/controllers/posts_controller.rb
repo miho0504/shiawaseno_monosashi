@@ -13,11 +13,10 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     @post[:start_time] = DateTime.current
-    if @post.save
-      redirect_to posts_path, notice: t('defaults.message.created')
-    else
-      flash.now['alert'] = t('defaults.message.not_created')
-      render :_new
+    respond_to do |format|
+      format.js do
+        @post.save
+      end
     end
   end
 

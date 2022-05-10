@@ -1,23 +1,22 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: "users/sessions",
+    registrations: "users/registrations",
+    passwords: 'users/passwords'
+  }
+  
+  # ゲストログイン
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
+
+  get "users/show" => "users#show"
   root 'pages#index'
+  
 
   resources :posts
-  # フォロー関連
-  resources :users do
-    collection do
-      get :friend_list
-    end
-    member do
-     resources :followers
-     get :following, :followers
-     get :search
-    end
-  end
-    # プロフィール関連
-  get "users/show" => "users#show"
+  resources :users
+
   resources :relationships,only: [:create, :destroy]
-  
-  # グラフ
   resources :graphs
 end

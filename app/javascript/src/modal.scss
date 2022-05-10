@@ -18,7 +18,15 @@
   transform: translate(0, 0) scale(1);
   transition: 0.2s;
   z-index: 2;
-  width: 935px;
+  width: 750px;
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.is_active {
+  display: block;
 }
 
 #mask.hidden {
@@ -32,8 +40,9 @@
   transform: translate(0, 0) scale(0.8);
 }
 
-.modal-container {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-      padding-left: 120px;
-    padding-top: 200px;
+
+@media screen and (max-width: 599px) {
+ #modal { 
+  width: auto;
+ }
 }

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DeviseRails6</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -8,12 +10,21 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
      <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <%= favicon_link_tag('favicon.ico') %>
    <head>
    <body>
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/flashes' %>
-    <%= yield %>
-    <%#= render 'layouts/footer' %>
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/flash_messages' %>
+　　　<div class="container content">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
   </body>
 </html>
+
+<!--フラッシュメッセージの秒数-->
+<script>
+$(function(){
+  $(".alert").fadeOut(4000);
+});
+</script>
