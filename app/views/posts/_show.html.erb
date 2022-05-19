@@ -4,7 +4,6 @@
         <br>
         <h3>今日のしあわせ評価:<%= post.today_mood %></h3>
         <% if post.content.present? %>
-
         <% end %>
       <div class="show_button">
         <%= button_to '編集', edit_post_path, method: :get, remote: true, class: "edit-showbtn" %>

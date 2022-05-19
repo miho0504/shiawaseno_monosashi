@@ -108,6 +108,7 @@ GEM
     nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     public_uid (2.1.1)
       activerecord (> 4.2)
     puma (5.6.4)
@@ -212,6 +213,7 @@ DEPENDENCIES
   groupdate
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  pg (= 1.2.3)
   public_uid
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
@@ -220,7 +222,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   simple_calendar (~> 2.0)
   spring
-  sqlite3 (~> 1.4)
+  sqlite3
   tzinfo-data
   web-console (>= 4.1.0)
   webpacker (~> 5.0)
