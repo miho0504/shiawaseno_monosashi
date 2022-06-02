@@ -1,24 +1,33 @@
-# README
+# しあわせのものさし
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+自分のしあわせを記録し可視化してゆくサービスです。
 
-Things you may want to cover:
+※ゲストログイン機能を設けてます
 
-* Ruby version
+#概要
+SNSなどが普及している今、ついつい他人と比較し
+綺麗になったら幸せになれる。結婚したら幸せになれる。お金持ちになったら幸せになれるなど
+他人の価値観に惑わされ、日常の中で起こっている自分にとっての幸せを見失いがちな方が最近は多いなと感じております。
+なので1日を振り返り自分が何に対して幸せを感じているのかを把握し、自分の幸せを見つけられるサービスを作りたいと考え作成致しました。
 
-* System dependencies
+#使用技術一覧
 
-* Configuration
+フロントエンド
 
-* Database creation
+HTML
+CSS(SCSS)
+JavaScript(jQuery)
+bootstrap5
 
-* Database initialization
+バックエンド
+Ruby 2.7.2
+Rails 6.1.3
+RSpec
 
-* How to run the test suite
+主要なgem
+simple_calendar (カレンダー)
+chart.js (グラフ)
 
-* Services (job queues, cache servers, search engines, etc.)
+#今後実装したいこと
 
-* Deployment instructions
-
-* ...
+リマインド機能
